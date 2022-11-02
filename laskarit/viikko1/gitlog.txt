@@ -1,0 +1,115 @@
+commit 74f82f0fe6f033657f9db368715f055a425ec72c
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 17:49:15 2022 +0200
+
+    teht 11
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+# tein ohjeiden mukaisesti, mutta jostain syystä cmd luulee, että uudelleennimesin file1.txt -> file22.txt, vaikka poistin file1.txt ja uudelleennimesin mv komennolla file2.txt -> file22.txt
+
+commit 9c2ebfc2458da74e9d3b821dc55fdaddd45468e8
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 17:21:35 2022 +0200
+
+    lisätään tiedostoja
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 0bb6f29145632bcb5a70a185e116bb965d7488de
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 17:16:08 2022 +0200
+
+    muokattu
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit c5e1f1772aee9e3de84a249e86d0e277acfda4a2
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 16:56:22 2022 +0200
+
+    uudelleennimetty tiedosto
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0666eff1b26ff7ada7f1de4d3f7b57ef46f589d8
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 16:54:16 2022 +0200
+
+    poistetaan toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 7894708f75b1e14b37546f6290e08334cb50a52e
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 16:53:06 2022 +0200
+
+    muokattiin taas tiedosto.txt
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 187e1e8c778ed092c4941fc40d2cfa3ee07fa8a1
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 16:51:50 2022 +0200
+
+    muokattiin tiedosto.txt
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8141539c074bf537fed13e907211c3f1a6110b31
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 16:35:53 2022 +0200
+
+    luotiin stuff
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 5db18a7247599f00bd0f1ea3934964281a4fcdb7
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 16:34:18 2022 +0200
+
+    muokattiin tiedostoja
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit a28c723dcc7d693f917e6b9da1debd1431dd4d7c
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 16:33:03 2022 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 97f10fd1f1a4803d6c7d2744e2b6f2c9d25c1f94
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 16:19:26 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit aea730607e3aae473874be998542885756885922
+Author: Liisa <liisa-m@outlook.com>
+Date:   Wed Nov 2 16:11:50 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
