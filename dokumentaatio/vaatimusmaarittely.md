@@ -2,11 +2,11 @@
 
 ## Sovellus: Mielentilaseuraaja
 
-###### Sovelluksen tarkoitus
+### Sovelluksen tarkoitus
 
 - Sovelluksen avulla voi seurata päivittäistä olotilaa ja kirjoittaa lisätietoja omasta päivästään. Ns. päiväkirjasovellus
 
-###### Suunnitellut toiminnallisuudet
+### Suunnitellut toiminnallisuudet
 
 - Voi luoda uuden käyttäjätunnuksen
 - Voi kirjautua sisään olemassa olevalle käyttäjälle
@@ -14,7 +14,7 @@
 - Käyttäjä voi kirjoittaa lisätietoja olotilastaan ja päivästään siihen tarkoitettuun kenttään (tietty merkkimäärä)
 - Käyttäjä voi tutkia aikaisempia merkintöjä
 
-###### Jatkokehitysideat
+### Jatkokehitysideat
 
 - Käyttäjä voi muokata merkintöjä
 - Käyttäjä voi poistaa merkintöjä
