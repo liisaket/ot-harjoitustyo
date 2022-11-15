@@ -1,7 +1,5 @@
-# OHTE
+# Mood-tracker
 
-**Tämä** on OHTE:n *harjoitustyön* README.md -tiedosto.
+[Työaikakirjanpito](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
-[gitlog.txt](https://github.com/liisaket/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/liisaket/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+[Vaatimusmäärittely](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
