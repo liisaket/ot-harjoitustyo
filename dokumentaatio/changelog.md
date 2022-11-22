@@ -1,4 +1,4 @@
-## Viikko 3
+### Viikko 3
 
 - Tietokantayhteys toimintaan, tietokannan alustus
 - Tiedostoon tallennus
