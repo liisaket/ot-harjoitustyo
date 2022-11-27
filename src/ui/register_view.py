@@ -26,7 +26,7 @@ class RegisterView:
         password = self._password_entry.get()
 
         if len(username) == 0 or len(password) == 0:
-            self._show_error("Username and password is required")
+            self._show_error("Username and password are required")
             return
 
         try:
