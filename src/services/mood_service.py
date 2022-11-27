@@ -10,7 +10,7 @@ class UsernameExistsError(Exception):
 class InvalidCredentialsError(Exception):
     pass
 
-class MtService:
+class MoodService:
     def __init__(self,user_repository=default_user_repository):
         self._user = None
         self._user_repository = user_repository
@@ -34,4 +34,4 @@ class MtService:
             self._user = user
         return user
 
-mtservice = MtService()
+moodservice = MoodService()

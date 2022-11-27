@@ -1,33 +1,18 @@
-from tkinter import Tk, ttk, constants
+import tkinter as tk
+from ui.ui import UI
 
-class UI:
-    def __init__(self, root):
-        self._root = root
+def main():
+    window = tk.Tk()
+    window.title("Mood-Tracker")
+    window.eval("tk::PlaceWindow . center")
+    frame1 = tk.Frame(window, width=500, height=300, bg="alice blue")
+    frame1.grid(row=0, column=0)
 
-    def start(self):
-        heading_label = ttk.Label(master=self._root, text="Login")
+    ui_view = UI(window)
+    ui_view.start()
 
-        username_label = ttk.Label(master=self._root, text="Username")
-        username_entry = ttk.Entry(master=self._root)
+    window.mainloop()
 
-        password_label = ttk.Label(master=self._root, text="Password")
-        password_entry = ttk.Entry(master=self._root)
 
-        button = ttk.Button(master=self._root, text="Button")
-
-        heading_label.grid(columnspan=2, sticky=constants.W, padx=5, pady=5)
-        username_label.grid(padx=5, pady=5)
-        username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
-        password_label.grid(padx=5, pady=5)
-        password_entry.grid(row=2, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
-        button.grid(columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
-
-        self._root.grid_columnconfigure(1, weight=1)
-
-window = Tk()
-window.title("TkInter example")
-
-ui = UI(window)
-ui.start()
-
-window.mainloop()
+if __name__ == "__main__":
+    main()
