@@ -7,3 +7,4 @@
 | | | tietokantaan ja tiedostoon tallentaminen,|
 | | | käyttäjäfunktiot, testi käyttäjistä, invoke|
 |22.11.|4|etävirtuaalikoneella testaus, käyttäjätoiminnot|
+|27.11.|2|käyttöliittymä, tkinter|
