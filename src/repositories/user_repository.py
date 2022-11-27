@@ -27,7 +27,7 @@ class UserRepository:
             (username,)
         )
         row = cursor.fetchone()
-        return get_user_by_row(row)
+        return User(row["username"], row["password"]) if row else None
     
     def delete_all(self):
         cursor = self._connection.cursor()
