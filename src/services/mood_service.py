@@ -38,4 +38,4 @@ class MoodService:
         return user
 
 
-moodservice = MoodService()
+mood_service = MoodService()

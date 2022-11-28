@@ -1,5 +1,5 @@
 from tkinter import ttk, StringVar, constants
-from services.mood_service import moodservice, UsernameExistsError
+from services.mood_service import mood_service, UsernameExistsError
 
 
 class RegisterView:
