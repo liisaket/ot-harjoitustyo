@@ -44,17 +44,10 @@ class MoodsView:
         )
     
     def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
-        self._todo_list_frame = ttk.Frame(master=self._frame)
+        self._frame = ttk.Frame(master=self._root, width=500, height=300, bg="alice blue")
 
         self._initialize_header()
 
-        self._todo_list_frame.grid(
-            row=1,
-            column=0,
-            columnspan=2,
-            sticky=constants.EW
-        )
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
         self._frame.grid_columnconfigure(1, weight=0)
