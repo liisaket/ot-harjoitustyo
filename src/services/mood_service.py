@@ -28,7 +28,7 @@ class MoodService:
         self._user = user
         return user
 
-    def create_user(self, username, password, login=True):
+    def register(self, username, password, login=True):
         existing_user = self._user_repository.find_by_username(username)
         if existing_user:
             raise UsernameExistsError(f"Username {username} already exists")

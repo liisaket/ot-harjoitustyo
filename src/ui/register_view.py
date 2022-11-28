@@ -30,8 +30,8 @@ class RegisterView:
             return
 
         try:
-            mood_service.create_user(username, password)
-            self._handle_create_user()
+            mood_service.register(username, password)
+            self._handle_register()
         except UsernameExistsError:
             self._show_error(f"Username {username} already exists")
 
