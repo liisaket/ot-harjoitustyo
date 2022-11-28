@@ -55,7 +55,7 @@ class RegisterView:
         self._password_entry.grid(padx=5, pady=5, sticky=constants.EW)
 
     def _initialize(self):
-        self._frame = ttk.Frame(master=self._root, width=500, height=300, bg="alice blue")
+        self._frame = ttk.Frame(master=self._root, width=500, height=300)
 
         self._error_variable = StringVar(self._frame)
 

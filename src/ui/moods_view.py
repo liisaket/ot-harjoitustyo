@@ -44,7 +44,7 @@ class MoodsView:
         )
     
     def _initialize(self):
-        self._frame = ttk.Frame(master=self._root, width=500, height=300, bg="alice blue")
+        self._frame = ttk.Frame(master=self._root, width=500, height=300)
 
         self._initialize_header()
 
