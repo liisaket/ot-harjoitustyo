@@ -20,7 +20,7 @@ class MoodsView:
     def _logout_handler(self):
         mood_service.logout()
         self._handle_logout()
-    
+
     def _initialize_header(self):
         user_label = ttk.Label(
             master=self._frame,
@@ -42,12 +42,11 @@ class MoodsView:
             pady=5,
             sticky=constants.EW
         )
-    
+
     def _initialize(self):
-        self._frame = ttk.Frame(master=self._root, width=500, height=300)
+        self._frame = ttk.Frame(master=self._root)
 
         self._initialize_header()
-
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
         self._frame.grid_columnconfigure(1, weight=0)

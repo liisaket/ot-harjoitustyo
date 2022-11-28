@@ -36,10 +36,10 @@ class MoodService:
         if login:
             self._user = user
         return user
-    
+
     def get_current_user(self):
         return self._user
-    
+
     def get_users(self):
         return self._user_repository.find_all()
 
