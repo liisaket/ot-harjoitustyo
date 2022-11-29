@@ -1,6 +1,6 @@
 # Vaatimusmäärittely
 
-## Sovellus: Mielentilaseuraaja
+## Sovellus: Mood-Tracker
 
 ### Sovelluksen tarkoitus
 
@@ -8,9 +8,9 @@
 
 ### Suunnitellut toiminnallisuudet
 
-- Voi luoda uuden käyttäjätunnuksen
-- Voi kirjautua sisään olemassa olevalle käyttäjälle
-- Käyttäjä voi valita päivän mielialaansa kuvailevan tunteen (yhden tai useamman) eri tunnetilavaihtoehdoista (teksti/kuva/väri/hymynaama konkretisoimaan tunteita?)
+- Voi luoda uuden käyttäjätunnuksen -> tehty
+- Voi kirjautua sisään olemassa olevalle käyttäjälle -> tehty
+- Käyttäjä voi valita päivän mielialaansa kuvailevan tunteen eri tunnetilavaihtoehdoista (valikko)
 - Käyttäjä voi kirjoittaa lisätietoja olotilastaan ja päivästään siihen tarkoitettuun kenttään (tietty merkkimäärä)
 - Käyttäjä voi tutkia aikaisempia merkintöjä
 
