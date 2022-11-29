@@ -9,3 +9,5 @@
 |22.11.|4|etävirtuaalikoneella testaus, käyttäjätoiminnot|
 |27.11.|2|käyttöliittymä, tkinter|
 |28.11.|3|käyttöliittymä, pylint, rakenteen suunnittelu|
+|29.11.|2|korjauksia, entry-luokka, entries tallennus|
+|yht.|18| |
