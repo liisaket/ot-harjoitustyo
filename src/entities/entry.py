@@ -1,7 +1,6 @@
+import uuid
 from datetime import datetime
 from zoneinfo import ZoneInfo
-import uuid
-
 
 class Entry:
     def __init__(self, content, emotion=None, user=None, entry_id=None):
