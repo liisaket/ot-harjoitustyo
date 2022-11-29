@@ -1,12 +1,12 @@
 from tkinter import ttk, constants
-from services.entry_service import entry_service
+from services.diary_service import diary_service
 
 
 class EntriesView:
     def __init__(self, root, handle_logout):
         self._root = root
         self._handle_logout = handle_logout
-        self._user = entry_service.get_current_user()
+        self._user = diary_service.get_current_user()
         self._frame = None
 
         self._initialize()
@@ -18,7 +18,7 @@ class EntriesView:
         self._frame.destroy()
 
     def _logout_handler(self):
-        entry_service.logout()
+        diary_service.logout()
         self._handle_logout()
 
     def _initialize_header(self):
