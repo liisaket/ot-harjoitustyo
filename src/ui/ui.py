@@ -38,7 +38,7 @@ class UI:
 
         self._current_view = RegisterView(
             self._root,
-            self._show_moods_view,
+            self._show_entries_view,
             self._show_login_view
         )
 
