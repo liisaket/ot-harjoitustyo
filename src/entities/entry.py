@@ -1,6 +1,7 @@
 import uuid
 from datetime import datetime
 
+
 class Entry:
     def __init__(self, content, emotion=None, user=None, entry_id=None):
         self.content = content
