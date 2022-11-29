@@ -1,12 +1,12 @@
 from tkinter import ttk, constants
-from services.mood_service import mood_service
+from services.entry_service import entry_service
 
 
-class MoodsView:
+class EntriesView:
     def __init__(self, root, handle_logout):
         self._root = root
         self._handle_logout = handle_logout
-        self._user = mood_service.get_current_user()
+        self._user = entry_service.get_current_user()
         self._frame = None
 
         self._initialize()
@@ -18,7 +18,7 @@ class MoodsView:
         self._frame.destroy()
 
     def _logout_handler(self):
-        mood_service.logout()
+        entry_service.logout()
         self._handle_logout()
 
     def _initialize_header(self):

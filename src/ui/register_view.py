@@ -1,5 +1,5 @@
 from tkinter import ttk, StringVar, constants
-from services.mood_service import mood_service, UsernameExistsError
+from services.entry_service import entry_service, UsernameExistsError
 
 
 class RegisterView:
@@ -30,7 +30,7 @@ class RegisterView:
             return
 
         try:
-            mood_service.register(username, password)
+            entry_service.register(username, password)
             self._handle_register()
         except UsernameExistsError:
             self._show_error(f"Username {username} already exists")

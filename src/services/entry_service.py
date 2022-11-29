@@ -13,7 +13,7 @@ class InvalidCredentialsError(Exception):
     pass
 
 
-class MoodService:
+class EntryService:
     def __init__(self, user_repository=default_user_repository):
         self._user = None
         self._user_repository = user_repository
@@ -44,4 +44,4 @@ class MoodService:
         return self._user_repository.find_all()
 
 
-mood_service = MoodService()
+entry_service = EntryService()
