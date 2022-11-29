@@ -1,5 +1,3 @@
-Tietokannat:
-
 ```mermaid
  classDiagram
       Entry "*" --> "1" User
@@ -14,6 +12,5 @@ Tietokannat:
           content
       }
 ```
-Arkkitehtuuri:
 
 ![Pakkausrakenne](./kuvat/arkkitehtuuri-rakenne.png)
