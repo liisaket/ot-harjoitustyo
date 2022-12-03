@@ -35,7 +35,8 @@ class UI:
         self._current_view = MainPageView(
             self._root, 
             self._show_login_view, 
-            self._show_new_entry_view
+            self._show_new_entry_view,
+            self._show_past_entries_view
         )
         self._current_view.pack()
    
