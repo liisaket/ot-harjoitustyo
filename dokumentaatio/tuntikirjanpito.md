@@ -10,4 +10,6 @@
 |27.11.|2|käyttöliittymä, tkinter|
 |28.11.|3|käyttöliittymä, pylint, rakenteen suunnittelu|
 |29.11.|2|korjauksia, entry-luokka, entries tallennus|
-|yht.|18| |
+|3.12.|3|etusivu, 2 uutta nappia ja sivua,|
+| | | uusi sekvenssikaavio, dokumentaatio|
+|yht.|21| |
