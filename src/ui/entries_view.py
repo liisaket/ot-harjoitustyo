@@ -58,8 +58,8 @@ class EntriesView:
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
-        new_entry_button.grid(padx=5, pady=5, sticky=constants.EW)
-        past_entries_button.grid(padx=5, pady=5, sticky=constants.EW)
+        new_entry_button.grid(row=2, column=0, padx=5, pady=5, sticky=constants.EW)
+        past_entries_button.grid(row=3, column=0, padx=5, pady=5, sticky=constants.EW)
 
         self._initialize_header()
 
