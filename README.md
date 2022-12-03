@@ -1,6 +1,8 @@
 # Mood-Tracker
 
-Päiväkirjasovellus tunteiden seurantaan. Sovelluksessa rekisteröitynyt käyttäjä voi tehdä postauksen päivän tunnetilasta ja kirjoittaa lisätietoja päivästään.
+Päiväkirjasovellus tunteiden seurantaan.
+
+Sovelluksessa rekisteröitynyt käyttäjä voi tehdä postauksen päivän tunnetilasta ja kirjoittaa lisätietoja päivästään.
 
 ## Dokumentaatio
 
