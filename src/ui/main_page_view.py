@@ -2,7 +2,7 @@ from tkinter import ttk, constants
 from services.diary_service import diary_service
 
 
-class EntriesView:
+class MainPageView:
     def __init__(self, root, handle_logout, handle_show_new_entry_view):
         self._root = root
         self._handle_show_new_entry_view = handle_show_new_entry_view
