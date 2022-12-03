@@ -56,7 +56,7 @@ class NewEntryView:
             text=f"How are you feeling today?"
         )
         
-       notes_label = ttk.Label(
+        notes_label = ttk.Label(
             master=self._frame,
             text=f"Notes:"
         )
