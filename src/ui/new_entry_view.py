@@ -3,8 +3,9 @@ from services.diary_service import diary_service
 
 
 class NewEntryView:
-    def __init__(self, root, handle_logout):
+    def __init__(self, root, handle_logout, handle_show_main_page_view):
         self._root = root
+        self._handle_show_main_page_view = handle_show_main_page_view
         self._handle_logout = handle_logout
         self._user = diary_service.get_current_user()
         self._frame = None
@@ -73,6 +74,7 @@ class NewEntryView:
         go_back_button = ttk.Button(
             master=self._frame,
             text="Go back",
+            command=self._handle_show_main_page_view
         )
         
         save_entry_button.grid(row=5, column=0, padx=5, pady=5, sticky=constants.EW)
