@@ -12,3 +12,8 @@
 - Entry-luokka "päiväkirja"postauksen luomiseen
 - UserRepository-luokan uusi testi
 - Lint ja format-tehtävät
+
+### Viikko 5
+- "Main Page" sivulla kaksi uutta nappia
+- Make an entry-nappi -> pääsee sivulle, jossa tehdään uusi postaus
+- Past entries-nappi -> pääsee sivulle, jossa näkee vanhat postaukset
