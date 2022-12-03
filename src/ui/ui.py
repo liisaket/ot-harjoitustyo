@@ -1,5 +1,5 @@
 from ui.login_view import LoginView
-from ui.entries_view import EntriesView
+from ui.main_page_view import MainPageView
 from ui.register_view import RegisterView
 from ui.new_entry_view import NewEntryView
 
@@ -29,9 +29,9 @@ class UI:
 
         self._current_view.pack()
 
-    def _show_entries_view(self):
+    def _show_main_page_view(self):
         self._hide_current_view()
-        self._current_view = EntriesView(self._root, self._show_login_view, self._show_new_entry_view)
+        self._current_view = MainPageView(self._root, self._show_login_view, self._show_new_entry_view)
         self._current_view.pack()
    
     def _show_new_entry_view(self):
@@ -44,7 +44,7 @@ class UI:
 
         self._current_view = RegisterView(
             self._root,
-            self._show_entries_view,
+            self._show_main_page_view,
             self._show_login_view
         )
 
