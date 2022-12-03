@@ -36,7 +36,7 @@ class UI:
    
     def _show_new_entry_view(self):
         self._hide_current_view()
-        self._current_view = NewEntryView(self._root, self._show_login_view)
+        self._current_view = NewEntryView(self._root, self._show_login_view, self._show_main_page_view)
         self._current_view.pack()
 
     def _show_register_view(self):
