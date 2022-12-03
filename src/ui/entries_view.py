@@ -3,8 +3,9 @@ from services.diary_service import diary_service
 
 
 class EntriesView:
-    def __init__(self, root, handle_logout):
+    def __init__(self, root, handle_logout, handle_show_new_entry_view):
         self._root = root
+        self._handle_show_new_entry_view = handle_show_new_entry_view
         self._handle_logout = handle_logout
         self._user = diary_service.get_current_user()
         self._frame = None
@@ -48,7 +49,8 @@ class EntriesView:
         
         new_entry_button = ttk.Button(
             master=self._frame,
-            text="Make an entry"
+            text="Make an entry",
+            command=self._handle_show_new_entry_view
         )
         
         past_entries_button = ttk.Button(
