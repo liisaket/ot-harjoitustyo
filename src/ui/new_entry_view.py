@@ -46,40 +46,42 @@ class NewEntryView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        
+
         new_label = ttk.Label(
             master=self._frame,
             text=f"New entry:"
         )
-        
+
         feeling_label = ttk.Label(
             master=self._frame,
             text=f"How are you feeling today?"
         )
-        
+
         notes_label = ttk.Label(
             master=self._frame,
             text=f"Notes:"
         )
-        
+
         new_label.grid(row=1, column=0, padx=5, pady=5, sticky=constants.W)
         feeling_label.grid(row=2, column=0, padx=5, pady=5, sticky=constants.W)
         notes_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
-        
+
         save_entry_button = ttk.Button(
             master=self._frame,
             text="Save entry"
         )
-        
+
         go_back_button = ttk.Button(
             master=self._frame,
             text="Go back",
             command=self._handle_show_main_page_view
         )
-        
-        save_entry_button.grid(row=5, column=0, padx=5, pady=5, sticky=constants.EW)
-        go_back_button.grid(row=6, column=0, padx=5, pady=5, sticky=constants.EW)
-        
+
+        save_entry_button.grid(row=5, column=0, padx=5,
+                               pady=5, sticky=constants.EW)
+        go_back_button.grid(row=6, column=0, padx=5,
+                            pady=5, sticky=constants.EW)
+
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
         self._initialize_header()

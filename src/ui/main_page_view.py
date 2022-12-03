@@ -47,13 +47,13 @@ class MainPageView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        
+
         new_entry_button = ttk.Button(
             master=self._frame,
             text="Make an entry",
             command=self._handle_show_new_entry_view
         )
-        
+
         past_entries_button = ttk.Button(
             master=self._frame,
             text="Past entries",
@@ -62,8 +62,10 @@ class MainPageView:
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
-        new_entry_button.grid(row=2, column=0, padx=5, pady=5, sticky=constants.EW)
-        past_entries_button.grid(row=3, column=0, padx=5, pady=5, sticky=constants.EW)
+        new_entry_button.grid(row=2, column=0, padx=5,
+                              pady=5, sticky=constants.EW)
+        past_entries_button.grid(
+            row=3, column=0, padx=5, pady=5, sticky=constants.EW)
 
         self._initialize_header()
 

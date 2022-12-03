@@ -46,22 +46,23 @@ class PastEntriesView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        
+
         past_label = ttk.Label(
             master=self._frame,
             text=f"Past entries:"
         )
-        
+
         past_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
-        
+
         go_back_button = ttk.Button(
             master=self._frame,
             text="Go back",
             command=self._handle_show_main_page_view
         )
-        
-        go_back_button.grid(row=6, column=0, padx=5, pady=5, sticky=constants.EW)
-        
+
+        go_back_button.grid(row=6, column=0, padx=5,
+                            pady=5, sticky=constants.EW)
+
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
         self._initialize_header()
