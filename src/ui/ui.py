@@ -23,7 +23,7 @@ class UI:
 
         self._current_view = LoginView(
             self._root,
-            self._show_entries_view,
+            self._show_main_page_view,
             self._show_register_view
         )
 
