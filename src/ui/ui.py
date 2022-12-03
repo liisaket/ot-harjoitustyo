@@ -2,6 +2,7 @@ from ui.login_view import LoginView
 from ui.main_page_view import MainPageView
 from ui.register_view import RegisterView
 from ui.new_entry_view import NewEntryView
+from ui.past_entries_view import PastEntriesView
 
 
 class UI:
