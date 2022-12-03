@@ -57,7 +57,7 @@ class MainPageView:
         past_entries_button = ttk.Button(
             master=self._frame,
             text="Past entries",
-            command=self.handle_show_past_entries_view
+            command=self._handle_show_past_entries_view
         )
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
