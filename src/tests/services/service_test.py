@@ -6,6 +6,7 @@ from services.diary_service import (
     UsernameExistsError
 )
 
+
 class FakeUserRepository:
     def __init__(self, users=None):
         self.users = users or []
@@ -28,16 +29,17 @@ class FakeUserRepository:
     def delete_all(self):
         self.users = []
 
+
 class TestDiaryService(unittest.TestCase):
     def setUp(self):
         self.diary_service = DiaryService(
             FakeUserRepository()
         )
         self.user_testi = User("testi", "testi123")
-    
+
     def login_user(self, user):
         self.diary_service.register(user.username, user.password)
-    
+
     def test_valid_login(self):
         self.diary_service.register(
             self.user_testi.username,
@@ -48,29 +50,29 @@ class TestDiaryService(unittest.TestCase):
             self.user_testi.password
         )
         self.assertEqual(user.username, self.user_testi.username)
-    
+
     def test_invalid_login(self):
         self.assertRaises(
             InvalidCredentialsError,
             lambda: self.diary_service.login("invalid", "credentials")
         )
-    
+
     def test_get_current_user(self):
         self.login_user(self.user_testi)
         current_user = self.diary_service.get_current_user()
         self.assertEqual(current_user.username, self.user_testi.username)
-    
+
     def test_valid_register(self):
         username = self.user_testi.username
         password = self.user_testi.password
-        
+
         self.diary_service.register(username, password)
-        
+
         users = self.diary_service.get_users()
 
         self.assertEqual(len(users), 1)
         self.assertEqual(users[0].username, username)
-    
+
     def test_invalid_register(self):
         username = self.user_testi.username
 
