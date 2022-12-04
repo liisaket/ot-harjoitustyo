@@ -17,3 +17,4 @@
 - "Main Page" sivulla kaksi uutta nappia
 - Make an entry-nappi -> pääsee sivulle, jossa tehdään uusi postaus
 - Past entries-nappi -> pääsee sivulle, jossa näkee vanhat postaukset
+- DiaryService:n testaus
