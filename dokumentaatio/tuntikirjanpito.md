@@ -12,4 +12,5 @@
 |29.11.|2|korjauksia, entry-luokka, entries tallennus|
 |3.12.|3|etusivu, 2 uutta nappia ja sivua,|
 | | | uusi sekvenssikaavio, dokumentaatio|
-|yht.|21| |
+|4.12.|1|uutta testausta|
+|yht.|22| |
