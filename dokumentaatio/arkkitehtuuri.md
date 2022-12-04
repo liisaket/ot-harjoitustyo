@@ -14,3 +14,5 @@
 ```
 
 ![Pakkausrakenne](./kuvat/arkkitehtuuri-rakenne.png)
+
+![Sekvenssikaavio](./kuvat/sekvenssikaavio_ui.png)
