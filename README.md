@@ -18,21 +18,28 @@ Sovelluksessa rekisteröitynyt käyttäjä voi tehdä postauksen päivän tunnet
 - [Vaatimusmäärittely](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 - [Arkkitehtuurikuvaus](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+## Käyttöohjeet
+
+- Lataa projektin viikon 5 [releasen](https://github.com/liisaket/ot-harjoitustyo/releases/tag/viikko5) lähdekoodi: Releases -> Assets -> Source code
+- Avaa ladattu zip-kansio ja pura se
+- Siirry purettuun kansioon terminaalissa -> jatka ohjeita Asennus-kohdasta
+
+
 ## Asennus
 
-1. Riippuvuudet voi asentaa komennolla:
+1. Riippuvuudet asennetaan komennolla:
 
 ```bash
 poetry install
 ```
 
-2. Alustustoimenpiteet voi suorittaa komennolla:
+2. Alustustoimenpiteet suoritetaan komennolla:
 
 ```bash
 poetry run invoke build
 ```
 
-3. Sovelluksen voi käynnistää komennolla:
+3. Sovelluksen käynnistetään komennolla:
 
 ```bash
 poetry run invoke start
