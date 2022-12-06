@@ -1,9 +1,9 @@
-import tkinter as tk
+from tkinter import Tk
 from ui.ui import UI
 
 
 def main():
-    window = tk.Tk()
+    window = Tk()
     window.title("Mood-Tracker")
     window.eval("tk::PlaceWindow . center")
 
