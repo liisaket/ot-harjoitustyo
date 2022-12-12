@@ -8,7 +8,7 @@ class PastEntriesView:
         self._handle_logout = handle_logout
         self._user = diary_service.get_current_user()
         self._entries_frame = None
-        self._entries_view = None
+        self._item_frame = None
         self._frame = None
 
         self._initialize()
@@ -25,16 +25,16 @@ class PastEntriesView:
     
     def _initialize_entry_item(self, entry):
         new_line = "\n"
-        item_frame = ttk.Frame(master=self._entries_frame)
+        self._item_frame = ttk.Frame(master=self._entries_frame)
         label = ttk.Label(
-            master=item_frame, 
+            master=self._item_frame, 
             text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}{new_line}"
         )
         
         label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.SW)
-        item_frame.grid_columnconfigure(0, weight=1)
-        item_frame.grid_columnconfigure(1, weight=0)
-        item_frame.pack(fill=constants.X)
+        self._item_frame.grid_columnconfigure(0, weight=1)
+        self._item_frame.grid_columnconfigure(1, weight=0)
+        self._item_frame.pack(fill=constants.X)
 
     def _initialize_entries(self):
         entries = diary_service.get_entries()
@@ -77,7 +77,7 @@ class PastEntriesView:
         go_back_button = ttk.Button(
             master=self._frame,
             text="Go back",
-            command=lambda: [self._entries_frame.destroy(),
+            command=lambda: [self._item_frame.destroy(),
                              self._handle_show_main_page_view]
         )
 
