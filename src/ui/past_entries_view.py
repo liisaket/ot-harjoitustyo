@@ -23,7 +23,7 @@ class PastEntriesList:
             text=f"Date:{entry.date}{new_line}Emotion:{entry.emotion}{new_line}Notes:{entry.content}"
         )
         
-        label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
+        label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.W)
 
         item_frame.grid_columnconfigure(0, weight=1)
         item_frame.pack(fill=constants.X)
@@ -105,15 +105,12 @@ class PastEntriesView:
         go_back_button = ttk.Button(
             master=self._frame,
             text="Go back",
-            command=lambda: [
-                self._handle_show_main_page_view,
-                self._entries_view.destroy()]
+            command=self._handle_show_main_page_view
         )
 
         go_back_button.grid(row=6, column=0, padx=5,
                             pady=5, sticky=constants.EW)
 
-        self._frame.grid_columnconfigure(0, weight=1, minsize=400)
         
         self._initialize_entries()
         self._initialize_header()
