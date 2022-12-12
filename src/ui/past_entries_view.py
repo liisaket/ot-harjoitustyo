@@ -35,7 +35,7 @@ class PastEntriesView:
 
         item_frame.grid_columnconfigure(0, weight=1)
         item_frame.grid_columnconfigure(1, weight=0)
-        #item_frame.pack(fill=constants.X)
+        item_frame.pack(fill=constants.X)
     
     def _initialize_entries(self):
         if self._entries_view:
