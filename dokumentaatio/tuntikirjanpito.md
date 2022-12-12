@@ -13,4 +13,7 @@
 |3.12.|3|etusivu, 2 uutta nappia ja sivua,|
 | | | uusi sekvenssikaavio, dokumentaatio|
 |4.12.|1|uutta testausta|
-|yht.|22| |
+|12.12.|11|postauksen luominen; tunnevalikko, lisätietoboxi,|
+| | | postaukset näkyviin past entries-sivulle (melkein),|
+| | | docstring, salasanaboxi|
+|yht.|33| |
