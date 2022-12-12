@@ -25,20 +25,15 @@ class PastEntriesView:
     
     def _initialize_entry_item(self, entry):
         new_line = "\n"
-        #item_frame = ttk.Frame(master=self._frame)
+        item_frame = ttk.Frame(master=self._frame)
         label = ttk.Label(
-            master=self._frame, 
+            master=item_frame, 
             text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}{new_line}"
         )
         
-        label.place(relx = 0.0, rely = 1.0, anchor ='sw')
-        #label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.SW)
+        label.place(relx = 0.0, rely = 0.0, anchor ='sw')
 
-    
     def _initialize_entries(self):
-        if self._entries_view:
-            self._entries_view.destroy()
-
         entries = diary_service.get_entries()
         for entry in entries:
             self._initialize_entry_item(entry)
