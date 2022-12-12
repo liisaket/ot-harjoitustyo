@@ -80,8 +80,8 @@ class NewEntryView:
             column=0,
             padx=5,
             pady=5,
-            width=15,
-            height=15,
+            width=5,
+            height=5,
             sticky=constants.EW
         )
 
