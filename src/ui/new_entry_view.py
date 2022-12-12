@@ -77,7 +77,7 @@ class NewEntryView:
         variable = StringVar()
         variable.set("happy")
         
-        c_box = Combobox(self._frame, values=choices, textvariable=variable, state="readonly")
+        c_box = Combobox(master=self._frame, values=choices, textvariable=variable, state="readonly")
         c_box.pack()
         
         
