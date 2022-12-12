@@ -79,7 +79,7 @@ class NewEntryView:
             row=3,
             column=0,
             padx=5,
-            pady=5,
+            pady=15,
             sticky=constants.EW
         )
 
