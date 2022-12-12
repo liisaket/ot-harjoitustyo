@@ -74,6 +74,19 @@ class DiaryService:
 
         entry = Entry(content=content, emotion=emotion, user=self._user)
         return self._entry_repository.create(entry)
+    
+    def get_entries(self):
+        """Palauttaa kirjautuneen käyttäjän päiväkirjapostaukset.
+        
+        Returns:
+            Palauttaa kirjautuneen käyttäjän päiväkirjapostaukset Entry-olioden listana.
+            Jos kirjautunutta käyttäjää ei ole, palauttaa tyhjän listan.
+        """
+
+        if not self._user:
+            return []
+
+        return self._entry_repository.find_by_username(self._user.username)
 
 
 diary_service = DiaryService()
