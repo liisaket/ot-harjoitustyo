@@ -1,4 +1,5 @@
-from tkinter import ttk, constants
+from tkinter import ttk, constants, StringVar
+from tkinter.tkk import Combobox
 from services.diary_service import diary_service
 
 
@@ -52,8 +53,6 @@ class NewEntryView:
             diary_service.create_entry(entry_content)
     
     def _initialize_footer(self):
-
-
         new_label = ttk.Label(
             master=self._frame,
             text=f"New entry:"
@@ -68,7 +67,14 @@ class NewEntryView:
             master=self._frame,
             text=f"Notes:"
         )
-
+        
+        choices = ["happy", "euphoric", "calm", "sad", "angry", "tired"]
+        variable = StringVar()
+        variable.set("happy")
+        
+        c_box = Combobox(self._root, values=choices, textvariable=variable, state="readonly")
+        c_box.pack()
+        
         self._create_entry = ttk.Entry(master=self._frame)
 
         new_label.grid(row=1, column=0, padx=5, pady=5, sticky=constants.W)
