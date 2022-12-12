@@ -9,6 +9,7 @@ class NewEntryView:
         self._handle_logout = handle_logout
         self._user = diary_service.get_current_user()
         self._frame = None
+        self._create_entry = None
 
         self._initialize()
 
@@ -43,9 +44,15 @@ class NewEntryView:
             pady=5,
             sticky=constants.EW
         )
+    
+    def _handle_create_entry(self):
+        entry_content = self._create_entry.get()
 
-    def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
+        if entry_content:
+            diary_service.create_entry(entry_content)
+    
+    def _initialize_footer(self):
+
 
         new_label = ttk.Label(
             master=self._frame,
@@ -62,13 +69,24 @@ class NewEntryView:
             text=f"Notes:"
         )
 
+        self._create_entry = ttk.Entry(master=self._frame)
+
         new_label.grid(row=1, column=0, padx=5, pady=5, sticky=constants.W)
         feeling_label.grid(row=2, column=0, padx=5, pady=5, sticky=constants.W)
         notes_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
 
+        self._create_entry.grid(
+            row=3,
+            column=0,
+            padx=5,
+            pady=5,
+            sticky=constants.EW
+        )
+
         save_entry_button = ttk.Button(
             master=self._frame,
-            text="Save entry"
+            text="Save entry",
+            command=self._handle_create_entry
         )
 
         go_back_button = ttk.Button(
@@ -82,8 +100,11 @@ class NewEntryView:
         go_back_button.grid(row=6, column=0, padx=5,
                             pady=5, sticky=constants.EW)
 
-        self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
+    def _initialize(self):
+        self._frame = ttk.Frame(master=self._root)
+
+        self._initialize_footer()
         self._initialize_header()
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
