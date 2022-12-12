@@ -1,7 +1,7 @@
 from pathlib import Path
 from entities.entry import Entry
 from repositories.user_repository import user_repository
-from confid import ENTRIES_FILE_PATH
+from config import ENTRIES_FILE_PATH
 
 class EntryRepository:
     """Luokka, joka vastaa päiväkirjapostauksiin liittyvistä tietokantaoperaatioista."""
