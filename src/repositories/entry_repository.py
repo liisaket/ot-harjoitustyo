@@ -23,6 +23,21 @@ class EntryRepository:
 
         return self._read()
     
+    def find_by_username(self, username):
+        """Palauttaa käyttäjän päiväkirjapostaukset.
+        
+        Args:
+            username: Käyttäjä, jonka postaukset palautetaan.
+        Returns:
+            Palauttaa listan Entry-olioita.
+        """
+
+        entries = self.find_all()
+        user_entries = filter(
+            lambda entry: entry.user and entry.user.username == username, entries)
+
+        return list(user_entries)
+    
     def _ensure_file_exist(self):
         Path(self._file_path).touch()
     
