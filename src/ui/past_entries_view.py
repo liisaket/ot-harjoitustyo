@@ -3,8 +3,9 @@ from services.diary_service import diary_service
 
 
 class PastEntriesView:
-    def __init__(self, root, handle_logout, handle_show_main_page_view):
+    def __init__(self, root, entries, handle_logout, handle_show_main_page_view):
         self._root = root
+        self._entries = entries
         self._handle_show_main_page_view = handle_show_main_page_view
         self._handle_logout = handle_logout
         self._user = diary_service.get_current_user()
@@ -21,6 +22,20 @@ class PastEntriesView:
     def _logout_handler(self):
         diary_service.logout()
         self._handle_logout()
+    
+    def _initialize_entry_item(self, entry):
+        item_frame = ttk.Frame(master=self._frame)
+        label = ttk.Label(
+            master=item_frame, 
+            text=f"Date:{entry.date}\n
+            Emotion:{entry.emotion}\n
+            Notes:{entry.content}"
+        )
+        
+        label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
+
+        item_frame.grid_columnconfigure(0, weight=1)
+        item_frame.pack(fill=constants.X)
 
     def _initialize_header(self):
         user_label = ttk.Label(
@@ -53,6 +68,9 @@ class PastEntriesView:
         )
 
         past_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
+        
+        for entry in self._entries:
+            self._initialize_entry_item(entry)
 
         go_back_button = ttk.Button(
             master=self._frame,
