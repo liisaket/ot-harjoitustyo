@@ -7,7 +7,7 @@ Sovelluksessa rekisteröitynyt käyttäjä voi tehdä postauksen päivän tunnet
 ### Sovelluksen tämänhetkinen tilanne:
 - Pystyy luomaan uuden käyttäjän ja kirjautua sisään
 - Pystyy kirjautumaan ulos Logout-napista
-- Etusivulla Make an entry-nappi: pääsee sivulle, jossa luodaan uusi postaus (ei vielä toiminnassa); Go back -> takaisin etusivulle, Save entry -> tallenna postaus (ei vielä tee mitään)
+- Etusivulla Make an entry-nappi: pääsee sivulle, jossa luodaan uusi postaus; Go back -> takaisin etusivulle, Save entry -> tallenna postaus
 - Etusivulla Past entries-nappi: pääsee sivulle, jossa näkyy kaikki omat postaukset
 
 
