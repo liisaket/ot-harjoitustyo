@@ -10,7 +10,8 @@ class NewEntryView:
         self._handle_logout = handle_logout
         self._user = diary_service.get_current_user()
         self._frame = None
-        self._create_entry = None
+        self._notes = None
+        self._emotion = None
 
         self._initialize()
 
@@ -47,10 +48,10 @@ class NewEntryView:
         )
     
     def _handle_create_entry(self):
-        entry_content = self._create_entry.get()
+        notes_content = self._notes.get()
 
-        if entry_content:
-            diary_service.create_entry(entry_content)
+        if notes_content:
+            diary_service.create_entry(entry_content,emotion=None)
     
     def _initialize_footer(self):
         new_label = ttk.Label(
@@ -65,24 +66,25 @@ class NewEntryView:
 
         notes_label = ttk.Label(
             master=self._frame,
-            text=f"Notes:"
+            text=f"Notes on your day:"
         )
-        
-        choices = ["happy", "euphoric", "calm", "sad", "angry", "tired"]
-        variable = StringVar()
-        variable.set("happy")
-        
-        c_box = Combobox(self._root, values=choices, textvariable=variable, state="readonly")
-        c_box.pack()
-        
-        self._create_entry = ttk.Entry(master=self._frame)
 
         new_label.grid(row=1, column=0, padx=5, pady=5, sticky=constants.W)
         feeling_label.grid(row=2, column=0, padx=5, pady=5, sticky=constants.W)
         notes_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
+                
+        choices = ["happy", "euphoric", "calm", "sad", "angry", "tired"]
+        variable = StringVar()
+        variable.set("happy")
+        
+        c_box = Combobox(self._frame, values=choices, textvariable=variable, state="readonly")
+        c_box.pack()
+        
+        
+        self._notes = ttk.Entry(master=self._frame)
 
-        self._create_entry.grid(
-            row=3,
+        self._notes.grid(
+            row=4,
             column=0,
             padx=5,
             pady=5,
