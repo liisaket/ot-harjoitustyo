@@ -37,8 +37,8 @@ class PastEntriesView:
         item_frame.pack(fill=constants.X)
     
     def _initialize_entries(self):
-        if self._entries_view:
-            self._entries_view.destroy()
+        if self._entries_frame:
+            self._entries_frame.destroy()
 
         entries = diary_service.get_entries()
         for entry in entries:
