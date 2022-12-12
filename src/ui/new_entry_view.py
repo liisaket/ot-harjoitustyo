@@ -78,8 +78,8 @@ class NewEntryView:
         self._create_entry.grid(
             row=3,
             column=0,
-            padx=5,
-            pady=15,
+            padx=30,
+            pady=30,
             sticky=constants.EW
         )
 
