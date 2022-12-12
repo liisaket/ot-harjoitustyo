@@ -71,19 +71,19 @@ class NewEntryView:
 
         new_label.grid(row=1, column=0, padx=5, pady=5, sticky=constants.W)
         feeling_label.grid(row=2, column=0, padx=5, pady=5, sticky=constants.W)
-        notes_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
+        notes_label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.W)
                 
         choices = ["happy", "euphoric", "calm", "sad", "angry", "tired"]
         variable = StringVar()
         variable.set("happy")
         
         c_box = ttk.Combobox(master=self._frame, values=choices, textvariable=variable, state="readonly")
-        
+        c_box.grid(row=3, column=0, padx=5, pady=5, stricky=constants.W)
         
         self._notes = ttk.Entry(master=self._frame)
 
         self._notes.grid(
-            row=4,
+            row=5,
             column=0,
             padx=5,
             pady=5,
