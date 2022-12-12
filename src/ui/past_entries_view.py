@@ -3,9 +3,8 @@ from services.diary_service import diary_service
 
 
 class PastEntriesView:
-    def __init__(self, root, entries, handle_logout, handle_show_main_page_view):
+    def __init__(self, root, handle_logout, handle_show_main_page_view):
         self._root = root
-        self._entries = entries
         self._handle_show_main_page_view = handle_show_main_page_view
         self._handle_logout = handle_logout
         self._user = diary_service.get_current_user()
@@ -60,6 +59,8 @@ class PastEntriesView:
         )
 
     def _initialize(self):
+        entries = diary_service.get_entries()
+        
         self._frame = ttk.Frame(master=self._root)
 
         past_label = ttk.Label(
@@ -69,7 +70,7 @@ class PastEntriesView:
 
         past_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
         
-        for entry in self._entries:
+        for entry in entries:
             self._initialize_entry_item(entry)
 
         go_back_button = ttk.Button(
