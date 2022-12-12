@@ -5,10 +5,12 @@ Päiväkirjasovellus tunteiden seurantaan.
 Sovelluksessa rekisteröitynyt käyttäjä voi tehdä postauksen päivän tunnetilasta ja kirjoittaa lisätietoja päivästään.
 
 ### Sovelluksen tämänhetkinen tilanne:
+
 - Pystyy luomaan uuden käyttäjän ja kirjautua sisään
 - Pystyy kirjautumaan ulos Logout-napista
-- Etusivulla Make an entry-nappi: pääsee sivulle, jossa luodaan uusi postaus; Go back -> takaisin etusivulle, Save entry -> tallenna postaus
-- Etusivulla Past entries-nappi: pääsee sivulle, jossa näkyy kaikki omat postaukset
+- Löytyy etusivu ja napit postauksen luomissivulle ja vanhojen postauksien katsomiseen
+- Pystyy luomaan uuden postauksen (valitaan päivän tunnetila ja voi kirjoittaa lisätietoja päivästään)
+- Past entries-sivulla näkyy vain uusin postaus !!
 
 
 ## Dokumentaatio
