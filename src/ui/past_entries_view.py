@@ -1,6 +1,40 @@
 from tkinter import ttk, constants
 from services.diary_service import diary_service
 
+class PastEntriesList:
+    def __init__(self, root, entries):
+        self._root = root
+        self._entries = entries
+        self._frame = None
+
+        self._initialize()
+
+    def pack(self):
+        self._frame.pack(fill=constants.X)
+
+    def destroy(self):
+        self._frame.destroy()
+
+    def _initialize_entry_item(self, entry):
+        new_line = "\n"
+        item_frame = ttk.Frame(master=self._frame)
+        label = ttk.Label(
+            master=item_frame, 
+            text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}"
+        )
+        
+        label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.SW)
+
+        item_frame.grid_columnconfigure(0, weight=1)
+        item_frame.pack(fill=constants.X)
+
+    def _initialize(self):
+        self._frame = ttk.Frame(master=self._root)
+
+        for entry in self._entries:
+            self._initialize_entry_item(entry)
+
+
 class PastEntriesView:
     def __init__(self, root, handle_logout, handle_show_main_page_view):
         self._root = root
@@ -23,27 +57,19 @@ class PastEntriesView:
         diary_service.logout()
         self._handle_logout()
     
-    def _initialize_entry_item(self, entry):
-        new_line = "\n"
-        #item_frame = ttk.Frame(master=self._entries_frame)
-        label = ttk.Label(
-            master=self._frame, 
-            text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}{new_line}"
-        )
-        
-        #label.place(relx = 0.0, rely = 1.0, anchor ='sw')
-        label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.SW)
-        #item_frame.grid_columnconfigure(0, weight=1)
-        #item_frame.pack(fill=constants.X)
-    
     def _initialize_entries(self):
-        if self._entries_view:
+        if self._entries_view or self._entries_frame:
             self._entries_view.destroy()
+            self._entries_frame.destroy()
 
         entries = diary_service.get_entries()
-        for entry in entries:
-            self._initialize_entry_item(entry)
-        
+
+        self._entries_view = PastEntriesList(
+            self._entries_frame, 
+            entries
+        )
+
+        self._entries_view.pack()
 
     def _initialize_header(self):
         user_label = ttk.Label(
