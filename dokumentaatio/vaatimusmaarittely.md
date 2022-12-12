@@ -10,9 +10,9 @@
 
 - Voi luoda uuden käyttäjätunnuksen -> tehty
 - Voi kirjautua sisään olemassa olevalle käyttäjälle -> tehty
-- Käyttäjä voi valita päivän mielialaansa kuvailevan tunteen eri tunnetilavaihtoehdoista (valikko)
-- Käyttäjä voi kirjoittaa lisätietoja olotilastaan ja päivästään siihen tarkoitettuun kenttään (tietty merkkimäärä)
-- Käyttäjä voi tutkia aikaisempia merkintöjä
+- Käyttäjä voi valita päivän mielialaansa kuvailevan tunteen eri tunnetilavaihtoehdoista (valikko) -> tehty
+- Käyttäjä voi kirjoittaa lisätietoja olotilastaan ja päivästään siihen tarkoitettuun kenttään -> tehty
+- Käyttäjä voi tutkia aikaisempia merkintöjä (-> tekeillä, ei toimi täysin oikein)
 
 ### Jatkokehitysideat
 
