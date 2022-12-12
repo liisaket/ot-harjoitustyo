@@ -78,7 +78,6 @@ class NewEntryView:
         variable.set("happy")
         
         c_box = ttk.Combobox(master=self._frame, values=choices, textvariable=variable, state="readonly")
-        c_box.pack()
         
         
         self._notes = ttk.Entry(master=self._frame)
