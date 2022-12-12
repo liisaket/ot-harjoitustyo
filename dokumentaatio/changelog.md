@@ -18,3 +18,8 @@
 - Make an entry-nappi -> pääsee sivulle, jossa tehdään uusi postaus
 - Past entries-nappi -> pääsee sivulle, jossa näkee vanhat postaukset
 - DiaryService:n testaus
+
+### Viikko 6
+- Postauksen luomissivulla valikko päivän tunteen valintaan sekä kirjoituslaatikko lisätiedoille
+- Postauksen pystyy tallentamaan
+- Postaukset näkyy Past entries-sivulla (tässä vielä säätöä!!)
