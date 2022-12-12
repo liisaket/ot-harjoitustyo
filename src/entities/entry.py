@@ -8,4 +8,4 @@ class Entry:
         self.emotion = emotion
         self.user = user
         self.id = entry_id or str(uuid.uuid4())
-        self.date = datetime.now().strftime("%Y-%m-%d %H:%M")
+        self.date = date or datetime.now().strftime("%Y-%m-%d %H:%M")
