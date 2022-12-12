@@ -9,7 +9,7 @@
 
 ### Viikko 4
 - Käyttöliittymä toimintaan; pystyy rekisteröitymään ja kirjautumaan sisälle
-- Entry-luokka "päiväkirja"postauksen luomiseen
+- Entry-luokka päiväkirjapostauksen luomiseen
 - UserRepository-luokan uusi testi
 - Lint ja format-tehtävät
 
@@ -21,5 +21,7 @@
 
 ### Viikko 6
 - Postauksen luomissivulla valikko päivän tunteen valintaan sekä kirjoituslaatikko lisätiedoille
-- Postauksen pystyy tallentamaan
-- Postaukset näkyy Past entries-sivulla (tässä vielä säätöä!!)
+- Postauksen pystyy tallentamaan (*tallennuksen yhteyteen ilmoitus, että tallennus onnistui*)
+- Postaukset näkyy Past entries-sivulla (*tässä vielä säätöä, näkyy vain uusin postaus !*)
+- Kun kirjautuu sisään, kirjoittaessa salasanaa ei enää näy kirjaimia, vaan tähtiä
+- Tiedostoihin docstringia
