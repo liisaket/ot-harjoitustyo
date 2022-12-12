@@ -64,7 +64,7 @@ class PastEntriesView:
         entries = diary_service.get_entries()
 
         self._entries_view = PastEntriesList(
-            self._frame, 
+            self._entries_frame, 
             entries
         )
 
