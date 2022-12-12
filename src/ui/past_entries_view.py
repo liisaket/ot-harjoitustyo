@@ -25,17 +25,14 @@ class PastEntriesView:
     
     def _initialize_entry_item(self, entry):
         new_line = "\n"
-        item_frame = ttk.Frame(master=self._frame)
+        #item_frame = ttk.Frame(master=self._frame)
         label = ttk.Label(
-            master=item_frame, 
+            master=self._frame, 
             text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}{new_line}"
         )
         
-        label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.W)
+        label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.SW)
 
-        item_frame.grid_columnconfigure(0, weight=1)
-        item_frame.grid_columnconfigure(1, weight=0)
-        item_frame.pack(fill=constants.X)
     
     def _initialize_entries(self):
         if self._entries_view:
