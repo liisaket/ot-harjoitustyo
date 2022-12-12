@@ -27,9 +27,7 @@ class PastEntriesView:
         item_frame = ttk.Frame(master=self._frame)
         label = ttk.Label(
             master=item_frame, 
-            text=f"Date:{entry.date}{new_line}
-            Emotion:{entry.emotion}{new_line}
-            Notes:{entry.content}"
+            text=f"Date:{entry.date}{new_line}Emotion:{entry.emotion}{new_line}Notes:{entry.content}"
         )
         
         label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
