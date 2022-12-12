@@ -32,6 +32,8 @@ class PastEntriesView:
         )
         
         label.place(relx = 0.0, rely = 0.0, anchor ='sw')
+        item_frame.grid_columnconfigure(0, weight=1)
+        item_frame.pack(fill=constants.X)
 
     def _initialize_entries(self):
         entries = diary_service.get_entries()
