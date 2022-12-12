@@ -57,18 +57,27 @@ class PastEntriesView:
         diary_service.logout()
         self._handle_logout()
     
+    def _initialize_entry_item(self, entry):
+        new_line = "\n"
+        item_frame = ttk.Frame(master=self._frame)
+        label = ttk.Label(
+            master=item_frame, 
+            text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}"
+        )
+        
+        label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.W)
+
+        item_frame.grid_columnconfigure(0, weight=1)
+        item_frame.pack(fill=constants.X)
+    
     def _initialize_entries(self):
         if self._entries_view:
             self._entries_view.destroy()
 
         entries = diary_service.get_entries()
-
-        self._entries_view = PastEntriesList(
-            self._entries_frame, 
-            entries
-        )
-
-        self._entries_view.pack()
+        for entry in entries:
+            self._initialize_entry_item(entry)
+        
 
     def _initialize_header(self):
         user_label = ttk.Label(
