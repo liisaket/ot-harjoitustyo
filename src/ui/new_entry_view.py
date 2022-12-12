@@ -52,7 +52,7 @@ class NewEntryView:
         emotion = self._emotion.get()
 
         if notes_content and emotion:
-            diary_service.create_entry(entry_content,emotion)
+            diary_service.create_entry(entry_content, emotion)
     
     def _initialize_footer(self):
         new_label = ttk.Label(
@@ -78,8 +78,8 @@ class NewEntryView:
         variable = StringVar()
         variable.set("happy")
         
-        c_box = ttk.Combobox(master=self._frame, values=choices, textvariable=variable, state="readonly")
-        c_box.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
+        self._emotion = ttk.Combobox(master=self._frame, values=choices, textvariable=variable, state="readonly")
+        self._emotion.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
         
         self._notes = ttk.Entry(master=self._frame)
 
