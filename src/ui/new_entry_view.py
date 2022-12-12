@@ -80,6 +80,9 @@ class NewEntryView:
         c_box = ttk.Combobox(master=self._frame, values=choices, textvariable=variable, state="readonly")
         c_box.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
         
+        style= ttk.Style()
+        style.configure("TCombobox", fieldbackground= "white", background= "white")
+        
         self._notes = ttk.Entry(master=self._frame)
 
         self._notes.grid(
@@ -102,9 +105,9 @@ class NewEntryView:
             command=self._handle_show_main_page_view
         )
 
-        save_entry_button.grid(row=5, column=0, padx=5,
+        save_entry_button.grid(row=6, column=0, padx=5,
                                pady=5, sticky=constants.EW)
-        go_back_button.grid(row=6, column=0, padx=5,
+        go_back_button.grid(row=7, column=0, padx=5,
                             pady=5, sticky=constants.EW)
 
 
