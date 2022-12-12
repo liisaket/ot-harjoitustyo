@@ -1,6 +1,7 @@
 from tkinter import ttk, constants
 from services.diary_service import diary_service
 
+
 class PastEntriesView:
     def __init__(self, root, handle_logout, handle_show_main_page_view):
         self._root = root
@@ -22,17 +23,16 @@ class PastEntriesView:
     def _logout_handler(self):
         diary_service.logout()
         self._handle_logout()
-    
+
     def _initialize_entry_item(self, entry):
         new_line = "\n"
         label = ttk.Label(
-            master=self._frame, 
+            master=self._frame,
             text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}{new_line}"
         )
 
         label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.EW)
 
-    
     def _initialize_entries(self):
         if self._entries_view:
             self._entries_view.destroy()
@@ -40,7 +40,6 @@ class PastEntriesView:
         entries = diary_service.get_entries()
         for entry in entries:
             self._initialize_entry_item(entry)
-        
 
     def _initialize_header(self):
         user_label = ttk.Label(
@@ -83,7 +82,6 @@ class PastEntriesView:
         go_back_button.grid(row=6, column=0, padx=5,
                             pady=5, sticky=constants.EW)
 
-        
         self._initialize_entries()
         self._initialize_header()
 

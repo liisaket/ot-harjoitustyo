@@ -4,7 +4,7 @@ from datetime import datetime
 
 class Entry:
     """Yksittäistä päiväkirjapostausta kuvaava luokka.
-    
+
     Attributes:
         content: Merkkijonoarvo, joka kuvaa käyttäjän päivää.
         emotion: Merkkijonoarvo, joka kuvaa käyttäjän tunnetilaa.
@@ -12,9 +12,10 @@ class Entry:
         entry_id: Merkkijonoarvo, joka kuvaa postauksen id:tä.
         date: Merkkijonoarvo, joka kuvaa postauksen luomispäivämäärää.
     """
+
     def __init__(self, content, emotion, user=None, entry_id=None, date=None):
         """Luokan konstruktori. Luo uuden postauksen.
-        
+
         Args:
             content: Merkkijonoarvo, joka kuvaa käyttäjän päivää.
             emotion: Merkkijonoarvo, joka kuvaa käyttäjän tunnetilaa.

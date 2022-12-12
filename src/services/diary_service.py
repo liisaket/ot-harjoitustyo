@@ -21,13 +21,14 @@ class InvalidCredentialsError(Exception):
 
 class DiaryService:
     """Luokka sovelluslogiikkaa varten."""
+
     def __init__(
-        self, 
-        user_repository=default_user_repository, 
+        self,
+        user_repository=default_user_repository,
         entry_repository=default_entry_repository
     ):
         """Luokan konstruktori. Luo uuden palvelun sovelluslogiikkaa varten.
-        
+
         Args:
             user_repository:
                 Vapaaehtoinen, oletusarvoltaan UserRepository-olio.
@@ -61,7 +62,7 @@ class DiaryService:
 
     def get_users(self):
         return self._user_repository.find_all()
-    
+
     def create_entry(self, content, emotion):
         """Luo uuden päiväkirjapostauksen.
 
@@ -74,10 +75,10 @@ class DiaryService:
 
         entry = Entry(content=content, emotion=emotion, user=self._user)
         return self._entry_repository.create(entry)
-    
+
     def get_entries(self):
         """Palauttaa kirjautuneen käyttäjän päiväkirjapostaukset.
-        
+
         Returns:
             Palauttaa kirjautuneen käyttäjän päiväkirjapostaukset Entry-olioden listana.
             Jos kirjautunutta käyttäjää ei ole, palauttaa tyhjän listan.

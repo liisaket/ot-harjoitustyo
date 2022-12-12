@@ -3,29 +3,31 @@ from entities.entry import Entry
 from repositories.user_repository import user_repository
 from config import ENTRIES_FILE_PATH
 
+
 class EntryRepository:
     """Luokka, joka vastaa päiväkirjapostauksiin liittyvistä tietokantaoperaatioista."""
+
     def __init__(self, file_path):
         """Luokan konstuktori.
-        
+
         Args:
             file_apth: Polku tiedostoon, johon postaukset tallennetaan.
         """
 
         self._file_path = file_path
-    
+
     def find_all(self):
         """Palauttaa kaikki päiväkirjapostaukset.
-        
+
         Returns:
             Listan Entry-olioita.
         """
 
         return self._read()
-    
+
     def find_by_username(self, username):
         """Palauttaa käyttäjän päiväkirjapostaukset.
-        
+
         Args:
             username: Käyttäjä, jonka postaukset palautetaan.
         Returns:
@@ -37,25 +39,25 @@ class EntryRepository:
             lambda entry: entry.user and entry.user.username == username, entries)
 
         return list(user_entries)
-    
+
     def _ensure_file_exist(self):
         Path(self._file_path).touch()
-    
+
     def create(self, entry):
         """Tallentaa postauksen tietokantaan.
-        
+
         Args:
             entry: Tallennettava postaus Entry-oliona.
         Returns:
             Tallennettu postaus Entry-oliona.
         """
-        
+
         entries = self.find_all()
         entries.append(entry)
         self._write(entries)
 
         return entry
-    
+
     def _read(self):
         entries = []
         self._ensure_file_exist()
@@ -73,19 +75,19 @@ class EntryRepository:
 
                 user = user_repository.find_by_username(
                     username) if username else None
-                
+
                 entries.append(
                     Entry(content, emotion, user, entry_id, date)
                 )
-        
+
         return entries
-    
+
     def _write(self, entries):
         self._ensure_file_exist()
 
         with open(self._file_path, "w", encoding="utf-8") as file:
             for entry in entries:
-                username =  entry.user.username if entry.user else ""
+                username = entry.user.username if entry.user else ""
                 row = f"{entry.id};{entry.date};{entry.content};{entry.emotion};{username}"
                 file.write(row+"\n")
 
