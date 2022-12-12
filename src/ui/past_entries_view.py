@@ -23,10 +23,9 @@ class PastEntriesList:
             text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}"
         )
         
-        label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.W)
+        label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.SW)
 
         item_frame.grid_columnconfigure(0, weight=1)
-        item_frame.grid_columnconfigure(1, weight=0)
         item_frame.pack(fill=constants.X)
 
     def _initialize(self):
