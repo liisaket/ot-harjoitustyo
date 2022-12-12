@@ -80,9 +80,6 @@ class NewEntryView:
         c_box = ttk.Combobox(master=self._frame, values=choices, textvariable=variable, state="readonly")
         c_box.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
         
-        style= ttk.Style()
-        style.configure("TCombobox", fieldbackground= "white", background= "white")
-        
         self._notes = ttk.Entry(master=self._frame)
 
         self._notes.grid(
