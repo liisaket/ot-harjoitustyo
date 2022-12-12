@@ -37,8 +37,8 @@ class PastEntriesView:
         item_frame.pack(fill=constants.X)
     
     def _initialize_entries(self):
-        if self._entries_frame:
-            self._entries_frame.destroy()
+        if self._entries_view:
+            self._entries_view.destroy()
 
         entries = diary_service.get_entries()
         for entry in entries:
@@ -87,7 +87,8 @@ class PastEntriesView:
                             pady=5, sticky=constants.EW)
 
         
-        self._initialize_entries()
+        self._entries_view = self._initialize_entries()
+        self._entries_view.pack()
         self._initialize_header()
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
