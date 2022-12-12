@@ -1,6 +1,11 @@
 from entities.entry import Entry
 from entities.user import User
 
+
+from repositories.entry_repository import (
+    entry_repository as default_entry_repository
+)
+
 from repositories.user_repository import (
     user_repository as default_user_repository
 )
