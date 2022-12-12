@@ -1,5 +1,4 @@
-from tkinter import ttk, constants, Tk, StringVar
-from tkinter.ttk import Combobox
+from tkinter import ttk, constants, Tk, StringVar, Combobox
 from services.diary_service import diary_service
 
 
@@ -77,7 +76,7 @@ class NewEntryView:
         variable = StringVar()
         variable.set("happy")
         
-        c_box = Combobox(self._root, values=choices, textvariable=variable, state="readonly")
+        c_box = ttk.Combobox(master=self._frame, values=choices, textvariable=variable, state="readonly")
         c_box.pack()
         
         
