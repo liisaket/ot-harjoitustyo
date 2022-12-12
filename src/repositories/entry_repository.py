@@ -14,6 +14,15 @@ class EntryRepository:
 
         self._file_path = file_path
     
+    def find_all(self):
+        """Palauttaa kaikki päiväkirjapostaukset.
+        
+        Returns:
+            Listan Entry-olioita.
+        """
+
+        return self._read()
+    
     def _ensure_file_exist(self):
         Path(self._file_path).touch()
     
