@@ -1,5 +1,5 @@
 from tkinter import Tk, ttk, constants, StringVar
-from tkinter.tkk import Combobox
+from tkk import Combobox
 from services.diary_service import diary_service
 
 
