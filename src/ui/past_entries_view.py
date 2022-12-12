@@ -31,7 +31,7 @@ class PastEntriesView:
             text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}{new_line}"
         )
         
-        label.place(relx = 0.0, rely = 0.0, anchor ='sw')
+        label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.SW)
         item_frame.grid_columnconfigure(0, weight=1)
         item_frame.pack()
 
