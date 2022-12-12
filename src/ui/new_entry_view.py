@@ -48,11 +48,11 @@ class NewEntryView:
         )
     
     def _handle_create_entry(self):
-        notes_content = self._notes.get()
+        content = self._notes.get()
         emotion = self._emotion.get()
 
-        if notes_content and emotion:
-            diary_service.create_entry(entry_content, emotion)
+        if content and emotion:
+            diary_service.create_entry(content, emotion)
     
     def _initialize_footer(self):
         new_label = ttk.Label(
