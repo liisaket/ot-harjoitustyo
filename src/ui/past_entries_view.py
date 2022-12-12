@@ -105,7 +105,9 @@ class PastEntriesView:
         go_back_button = ttk.Button(
             master=self._frame,
             text="Go back",
-            command=self._handle_show_main_page_view
+            command=lambda: [
+                self._handle_show_main_page_view,
+                self._entries_view.destroy()]
         )
 
         go_back_button.grid(row=6, column=0, padx=5,
