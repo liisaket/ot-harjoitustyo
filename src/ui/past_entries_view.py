@@ -1,6 +1,7 @@
 from tkinter import ttk, constants
 from services.diary_service import diary_service
 
+
 class PastEntriesList:
     def __init__(self, root, entries):
         self._root = root
@@ -19,10 +20,10 @@ class PastEntriesList:
         new_line = "\n"
         item_frame = ttk.Frame(master=self._frame)
         label = ttk.Label(
-            master=item_frame, 
+            master=item_frame,
             text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}"
         )
-        
+
         label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.SW)
 
         item_frame.grid_columnconfigure(0, weight=1)
@@ -56,7 +57,7 @@ class PastEntriesView:
     def _logout_handler(self):
         diary_service.logout()
         self._handle_logout()
-    
+
     def _initialize_entries(self):
         if self._entries_view:
             self._entries_view.destroy()
@@ -64,7 +65,7 @@ class PastEntriesView:
         entries = diary_service.get_entries()
 
         self._entries_view = PastEntriesList(
-            self._entries_frame, 
+            self._entries_frame,
             entries
         )
 
@@ -112,7 +113,6 @@ class PastEntriesView:
         go_back_button.grid(row=6, column=0, padx=5,
                             pady=5, sticky=constants.EW)
 
-        
         self._initialize_entries()
         self._initialize_header()
 
