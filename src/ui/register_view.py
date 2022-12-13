@@ -3,7 +3,19 @@ from services.diary_service import diary_service, UsernameExistsError
 
 
 class RegisterView:
+    """Luokka rekisteröitymisnäkymää varten."""
+    
     def __init__(self, root, handle_register, handle_show_login_view):
+        """Luokan konstruktori. Luo uuden rekisteröitymisnäkymän.
+        
+        Args:
+            root: TKinter-elementti, jonka sisään näkymä alustetaan.
+            handle_register:
+                Kutsuttava arvo, jota kutsutaan, kun uusi käyttäjä luodaan.
+            handle_show_login_view:
+                Kutsuttava arvo, jota kutsutaan, kun siirrytään sisäänkirjautumisnäkymään.
+        """
+        
         self._root = root
         self._handle_register = handle_register
         self._handle_show_login_view = handle_show_login_view
@@ -16,9 +28,11 @@ class RegisterView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _register_handler(self):
