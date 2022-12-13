@@ -76,6 +76,8 @@ class NewEntryView:
 
         if content and emotion:
             diary_service.create_entry(content, emotion)
+            self._initialize()
+            self._show_message("Entry saved.")
 
     def _initialize_footer(self):
         new_label = ttk.Label(
@@ -99,7 +101,6 @@ class NewEntryView:
 
         choices = ["happy", "euphoric", "calm", "sad", "angry", "tired"]
         variable = StringVar()
-        variable.set("happy")
 
         self._emotion = ttk.Combobox(
             master=self._frame, values=choices, textvariable=variable, state="readonly")
@@ -118,9 +119,7 @@ class NewEntryView:
         save_entry_button = ttk.Button(
             master=self._frame,
             text="Save entry",
-            command=lambda: [
-                self._handle_create_entry,
-                self._show_message("Entry saved.")]
+            command=self._handle_create_entry
         )
 
         go_back_button = ttk.Button(
