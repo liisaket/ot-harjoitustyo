@@ -10,7 +10,7 @@ Sovelluksessa käyttäjä voi tehdä postauksen, jossa hän valitsee päivän tu
 - Pystyy kirjautumaan ulos Logout-napista
 - Löytyy etusivu ja napit postauksen luomissivulle ja vanhojen postauksien katsomiseen
 - Pystyy luomaan uuden postauksen (valitaan päivän tunnetila ja voi kirjoittaa lisätietoja päivästään)
-- Past entries-sivulla näkyy vain uusin postaus !!
+- Past entries-sivulla näkyy omat postaukset
 
 
 ## Dokumentaatio
