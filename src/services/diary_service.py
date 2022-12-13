@@ -34,14 +34,28 @@ class DiaryService:
                 Vapaaehtoinen, oletusarvoltaan UserRepository-olio.
                 Olio, jolla on UserRepository-luokkaa vastaavat metodit.
         """
+        
         self._user = None
         self._user_repository = user_repository
         self._entry_repository = entry_repository
 
     def logout(self):
+        """Kirjaa käyttäjän ulos."""
         self._user = None
 
     def login(self, username, password):
+        """Kirjaa käyttäjän sisään.
+        
+        Args:
+            username: Merkkijonoarvo, joka kuvaa käyttäjätunnusta.
+            password: Merkkijonoarvo, joka kuvaa salasanaa.
+        Raises:
+            InvalidCredentialsError:
+                Virhetilanne, jossa käyttäjätunnus ja salasana eivät täsmää.
+        Returns:
+            Sisäänkirjautunut käyttäjä User-oliona.
+        """
+        
         user = self._user_repository.find_by_username(username)
         if not user or user.password != password:
             raise InvalidCredentialsError("Invalid username or password")
@@ -49,6 +63,21 @@ class DiaryService:
         return user
 
     def register(self, username, password, login=True):
+        """Luo uuden käyttäjän.
+        
+        Args:
+            username: Merkkijonoarvo, joka kuvaa käyttäjätunnusta.
+            password: Merkkijonoarvo, joka kuvaa salasanaa.
+            login:
+                Vapaaehtoinen, oletusarvoltaan True.
+                Boolean-arvo, joka kertoo kirjataanko käyttäjä sisään onnistuneen luonnin jälkeen.
+        Raises:
+            UsernameExistsError:
+                Virhetilanne, jossa käyttäjätunnus on jo olemassa.
+        Returns:
+            Palauttaa luodun käyttäjän User-oliona.
+        """
+        
         existing_user = self._user_repository.find_by_username(username)
         if existing_user:
             raise UsernameExistsError(f"Username {username} already exists")
@@ -58,9 +87,21 @@ class DiaryService:
         return user
 
     def get_current_user(self):
+        """Palauttaa kirjautuneena olevan käyttäjän.
+        
+        Returns:
+            Palauttaa kirjautuneena olevan käyttäjän User-oliona.
+        """
+        
         return self._user
 
     def get_users(self):
+        """Palauttaa kaikki käyttäjät.
+        
+        Returns:
+            Palauttaa kaikki käyttäjät User-olioiden listana.
+        """
+        
         return self._user_repository.find_all()
 
     def create_entry(self, content, emotion):
@@ -80,7 +121,7 @@ class DiaryService:
         """Palauttaa kirjautuneen käyttäjän päiväkirjapostaukset.
 
         Returns:
-            Palauttaa kirjautuneen käyttäjän päiväkirjapostaukset Entry-olioden listana.
+            Palauttaa kirjautuneen käyttäjän päiväkirjapostaukset Entry-olioiden listana.
             Jos kirjautunutta käyttäjää ei ole, palauttaa tyhjän listan.
         """
 
