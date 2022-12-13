@@ -21,7 +21,7 @@
 
 ### Viikko 6
 - Postauksen luomissivulla valikko päivän tunteen valintaan sekä kirjoituslaatikko lisätiedoille
-- Postauksen pystyy tallentamaan (*tallennuksen yhteyteen ilmoitus, että tallennus onnistui*)
+- Postauksen pystyy tallentamaan ja siitä tulee ilmoitus "Entry saved."
 - Past entries-sivulla näkyy omat postaukset
 - Kun kirjautuu sisään, kirjoittaessa salasanaa ei enää näy kirjaimia, vaan tähtiä
 - Tiedostoihin docstringia
