@@ -25,3 +25,4 @@
 - Past entries-sivulla näkyy omat postaukset
 - Kun kirjautuu sisään, kirjoittaessa salasanaa ei enää näy kirjaimia, vaan tähtiä
 - Tiedostoihin docstringia
+- Käyttöohjeet ja arkkitehtuurikuvaus
