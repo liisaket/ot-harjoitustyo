@@ -4,7 +4,19 @@ from services.diary_service import diary_service
 
 
 class NewEntryView:
+    """Luokka uuden postauksen luomista varten."""
+    
     def __init__(self, root, handle_logout, handle_show_main_page_view):
+        """Luokan konstruktori. Luo uuden näkymän.
+        
+        Args:
+            root: TKinter-elementti, jonka sisään näkymä alustetaan.
+            handle_logout:
+                Kutsuttava arvo, jota kutsutaan, kun käyttäjä kirjautuu ulos.
+            handle_show_main_page_view:
+                Kutsuttava arvo, jota kutsutaan, kun siirrytään etusivulle.
+        """
+        
         self._root = root
         self._handle_show_main_page_view = handle_show_main_page_view
         self._handle_logout = handle_logout
@@ -12,14 +24,25 @@ class NewEntryView:
         self._frame = None
         self._notes = None
         self._emotion = None
+        self._message_variable = None
+        self._message_label = None
 
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
+    
+    def _show_message(self, message):
+        self._message_variable.set(message)
+        self._message_label.grid()
+
+    def _hide_message(self):
+        self._message_label.grid_remove()
 
     def _logout_handler(self):
         diary_service.logout()
@@ -95,7 +118,9 @@ class NewEntryView:
         save_entry_button = ttk.Button(
             master=self._frame,
             text="Save entry",
-            command=self._handle_create_entry
+            command=lambda: [
+                self._handle_create_entry,
+                self._show_message("Entry saved.")]
         )
 
         go_back_button = ttk.Button(
@@ -111,6 +136,16 @@ class NewEntryView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
+        
+        self._message_variable = StringVar(self._frame)
+
+        self._message_label = ttk.Label(
+            master=self._frame,
+            textvariable=self._message_variable,
+            foreground="green"
+        )
+
+        self._message_label.grid(padx=5, pady=5)
 
         self._initialize_footer()
         self._initialize_header()
