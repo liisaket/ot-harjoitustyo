@@ -76,6 +76,7 @@ class NewEntryView:
 
         if content and emotion:
             diary_service.create_entry(content, emotion)
+            self._frame.destroy()
             self._initialize()
             self._show_message("Entry saved.")
 
