@@ -3,7 +3,19 @@ from services.diary_service import diary_service, InvalidCredentialsError
 
 
 class LoginView:
+    """Luokka sisäänkirjautumisnäkymää varten."""
+    
     def __init__(self, root, handle_login, handle_show_register_view):
+        """Luokan konstruktori. Luo uuden sisäänkirjautumisnäkymän.
+        
+        Args:
+            root: TKinter-elementti, jonka sisään näkymä alustetaan.
+            handle_login:
+                Kutsuttava arvo, jota kutsutaan, kun käyttäjä kirjautuu sisään.
+            handle_show_register_view:
+                Kutsuttava arvo, jota kutsutaan, kun siirrytään rekisteröitymisnäkymään.
+        """
+        
         self._root = root
         self._handle_login = handle_login
         self._handle_show_register_view = handle_show_register_view
@@ -16,9 +28,11 @@ class LoginView:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _login_handler(self):
