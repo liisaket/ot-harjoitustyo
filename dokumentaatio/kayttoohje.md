@@ -28,7 +28,7 @@ poetry run invoke start
 
 Sisäänkirjautumissivu tulee näkyviin sovelluksen käynnistämisen yhteydessä.
 
-*kuva*
+![login](./kuvat/login.png)
 
 Sisäänkirjaudutaan kirjoittamalla olemassaoleva käyttäjätunnus ja sen salasana syötekenttiin, ja painamalla "Login"-nappia. Jos sisäänkirjautuminen epäonnistuu, tulee esiin virheilmoitus epäpätevästä käyttäjätunnuksesta tai salasanasta.
 
@@ -36,9 +36,9 @@ Sisäänkirjaudutaan kirjoittamalla olemassaoleva käyttäjätunnus ja sen salas
 
 Sisäänkirjautumissivulta pääsee luomaan uuden käyttäjän painamalla "Create user"-nappia.
 
-*kuva*
+![createuser](./kuvat/createuser.png)
 
-Uusi käyttäjä luodaan kirjoittajamalla pätevä käyttäjätunnus ja salasana syötekenttiin ja painamalla "Create"-nappia. Jos käyttäjän luominen onnistuu, siirrytään sovelluksen etusivulle. Muussa tapauksessa tulee esiin virheilmoitus epäpätevästä käyttäjätunnuksesta.
+Uusi käyttäjä luodaan kirjoittamalla pätevä käyttäjätunnus ja salasana syötekenttiin ja painamalla "Create"-nappia. Jos käyttäjän luominen onnistuu, siirrytään sovelluksen etusivulle. Muussa tapauksessa tulee esiin virheilmoitus epäpätevästä käyttäjätunnuksesta.
 
 Takaisin sisäänkirjautumissivulle pääsee painamalla "Login"-nappia.
 
@@ -46,19 +46,21 @@ Takaisin sisäänkirjautumissivulle pääsee painamalla "Login"-nappia.
 
 Kun sisään on kirjauduttu, tulee näkyviin sovelluksen etusivu.
 
-*kuva*
+![mainpage](./kuvat/mainpage.png)
 
-Oma käyttäjätunnus näkyy vasemassa yläkulmassa. Oikean yläkulman "Logout"-napista pääsee uloskirjautumaan.
+Oma käyttäjätunnus näkyy vasemmassa yläkulmassa ("Logged in as *käyttäjätunnus*").
+
+Oikean yläkulman "Logout"-napista voi kirjautua ulos.
 
 Uutta postausta pääsee luomaan "Make an entry"-napista.
 
-Vanhoja postauksia pääsee katsomaan "Past entries"-napista. *kesken*
+Omia postauksia pääsee katsomaan "Past entries"-napista.
 
 ## Postauksen luominen
 
 Kun etusivulla painetaan "Make an entry"-nappia, siirrytään uuden postauksen luomissivulle.
 
-*kuva*
+![entry](./kuvat/entry.png)
 
 Valikosta valitaan päivän tunnetilaa kuvaava adjektiivi (happy, euphoric, calm, sad, angry, tired).
 
@@ -70,7 +72,9 @@ Syötekenttään voi kirjoittaa lisätietoja päivästään.
 
 ## Vanhat postaukset
 
-Kun etusivulla painetaan "Past entries"-nappia, siirrytään sivulle, jossa näkee käyttäjän postaukset. *kesken*
+Kun etusivulla painetaan "Past entries"-nappia, siirrytään sivulle, jossa näkee käyttäjän postaukset.
+
+![pastentries](./kuvat/pastentries.png)
 
 ## Komentorivikomennot
 
