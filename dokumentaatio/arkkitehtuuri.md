@@ -1,3 +1,12 @@
+# Arkkitehtuurikuvaus
+
+### Rakenne
+
+- Käyttöliittymä: ui
+- Sovelluslogiikka: services
+- Tietojen tallennus: repositories
+- Luokat tietojen tallennukseen: entities
+
 ```mermaid
  classDiagram
       Entry "*" --> "1" User
