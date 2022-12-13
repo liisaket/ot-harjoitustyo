@@ -2,7 +2,7 @@
 
 Päiväkirjasovellus tunteiden seurantaan.
 
-Sovelluksessa rekisteröitynyt käyttäjä voi tehdä postauksen päivän tunnetilasta ja kirjoittaa lisätietoja päivästään.
+Sovelluksessa käyttäjä voi tehdä postauksen, jossa hän valitsee päivän tunnetilan ja kirjoittaa lisätietoja päivästään.
 
 ### Sovelluksen tämänhetkinen tilanne:
 
@@ -15,17 +15,11 @@ Sovelluksessa rekisteröitynyt käyttäjä voi tehdä postauksen päivän tunnet
 
 ## Dokumentaatio
 
-- [Työaikakirjanpito](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
-- [Changelog](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
-- [Vaatimusmäärittely](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+- [Käyttöohjeet](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 - [Arkkitehtuurikuvaus](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
-
-## Käyttöohjeet
-
-- Lataa projektin viikon 5 [releasen](https://github.com/liisaket/ot-harjoitustyo/releases/tag/viikko5) lähdekoodi: Releases -> Assets -> Source code
-- Avaa ladattu zip-kansio ja pura se
-- Siirry purettuun kansioon terminaalissa -> jatka ohjeita Asennus-kohdasta
-
+- [Vaatimusmäärittely](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+- [Changelog](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
+- [Työaikakirjanpito](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
 ## Asennus
 
