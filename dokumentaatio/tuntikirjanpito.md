@@ -16,6 +16,6 @@
 |12.12.|11|postauksen luominen; tunnevalikko, lisätietoboxi,|
 | | | postaukset näkyviin past entries-sivulle (melkein),|
 | | | docstring, salasanaboxi|
-|13.12.|6|past entries-sivu toimimaan, arkkitehtuuri.md,
-| | | käyttöohje.md, ilmoitus tallennetusta postauksesta|
+|13.12.|6|past entries-sivu toimimaan, arkkitehtuurikuvaus,
+| | | käyttöohjeet, ilmoitus tallennetusta postauksesta|
 |yht.|39| |
