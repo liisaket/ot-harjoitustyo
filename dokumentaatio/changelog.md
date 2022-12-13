@@ -22,6 +22,6 @@
 ### Viikko 6
 - Postauksen luomissivulla valikko päivän tunteen valintaan sekä kirjoituslaatikko lisätiedoille
 - Postauksen pystyy tallentamaan (*tallennuksen yhteyteen ilmoitus, että tallennus onnistui*)
-- Postaukset näkyy Past entries-sivulla (*tässä vielä säätöä, näkyy vain uusin postaus !*)
+- Past entries-sivulla näkyy omat postaukset
 - Kun kirjautuu sisään, kirjoittaessa salasanaa ei enää näy kirjaimia, vaan tähtiä
 - Tiedostoihin docstringia
