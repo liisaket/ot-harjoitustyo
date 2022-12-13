@@ -21,6 +21,11 @@ Sovelluksessa käyttäjä voi tehdä postauksen, jossa hän valitsee päivän tu
 - [Changelog](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 - [Työaikakirjanpito](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
+## Releases
+
+- [Releases](https://github.com/liisaket/ot-harjoitustyo/releases)
+- Uusin release on viikolta 6 (13.12.2022)
+
 ## Asennus
 
 1. Riippuvuudet asennetaan komennolla:
