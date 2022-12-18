@@ -77,10 +77,10 @@ class NewEntryView:
 
         if content and emotion:
             diary_service.create_entry(content, emotion)
-            self._message_color = "green"
+            self._initialize_message("green")
             self._show_message("Entry saved.")
         else:
-            self._message_color = "red"
+            self._initialize_message("red")
             self._show_message("Please fill the form.")
 
     def _initialize_footer(self):
@@ -136,19 +136,20 @@ class NewEntryView:
                                pady=5, sticky=constants.EW)
         go_back_button.grid(row=7, column=0, padx=5,
                             pady=5, sticky=constants.EW)
-
-    def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
-        
+    
+    def _initialize_message(self, color):
         self._message_variable = StringVar(self._frame)
 
         self._message_label = ttk.Label(
             master=self._frame,
             textvariable=self._message_variable,
-            foreground=self._message_color,
+            foreground=color,
         )
 
         self._message_label.grid(padx=5, pady=5)
+
+    def _initialize(self):
+        self._frame = ttk.Frame(master=self._root)
 
         self._initialize_footer()
         self._initialize_header()
