@@ -1,4 +1,4 @@
-from tkinter import ttk, constants, Tk, StringVar
+from tkinter import ttk, constants, StringVar
 from tkinter.ttk import Combobox
 from services.diary_service import diary_service
 
