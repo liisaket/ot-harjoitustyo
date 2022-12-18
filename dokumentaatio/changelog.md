@@ -26,3 +26,8 @@
 - Kun kirjautuu sisään, kirjoittaessa salasanaa ei enää näy kirjaimia, vaan tähtiä
 - Tiedostoihin docstringia
 - Käyttöohjeet ja arkkitehtuurikuvaus
+
+### Viikko 7
+- Virheilmoitus, jos yrittää lisätä tyhjänä uutta postausta.
+- Ilmoitus Past Entries-sivulla, jos käyttäjällä ei ole vielä yhtään postauksia.
+- Docstringiä loppuihin tiedostoihin
