@@ -26,7 +26,6 @@ class NewEntryView:
         self._emotion = None
         self._message_variable = None
         self._message_label = None
-        self._message_color = None
 
         self._initialize()
 
@@ -146,7 +145,7 @@ class NewEntryView:
             foreground=color,
         )
 
-        self._message_label.grid(padx=5, pady=5)
+        self._message_label.grid(row=0, padx=5, pady=5, sticky=constants.N)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
