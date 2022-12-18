@@ -98,7 +98,6 @@ class PastEntriesView:
         self._message_label = ttk.Label(
             master=self._frame,
             textvariable=self._message_variable,
-            foreground=None,
         )
 
         self._message_label.grid(row=4, padx=5, pady=5, sticky=constants.S)
