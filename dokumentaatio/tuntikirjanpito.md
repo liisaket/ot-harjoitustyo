@@ -17,5 +17,6 @@
 | | | postaukset näkyviin past entries-sivulle (melkein),|
 | | | docstring, salasanaboxi|
 |13.12.|6|past entries-sivu toimimaan, arkkitehtuurikuvaus,
-| | | käyttöohjeet, ilmoitus tallennetusta postauksesta|
-|yht.|39| |
+| | | käyttöohjeet, ilmoitus tallennetusta postauksesta| 
+|19.12.|1|docstring, 2 uutta ilmoitusta, koodin hienosäätöä|
+|yht.|40| |
