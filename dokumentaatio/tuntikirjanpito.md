@@ -18,5 +18,5 @@
 | | | docstring, salasanaboxi|
 |13.12.|6|past entries-sivu toimimaan, arkkitehtuurikuvaus,
 | | | käyttöohjeet, ilmoitus tallennetusta postauksesta| 
-|19.12.|1|docstring, 2 uutta ilmoitusta, koodin hienosäätöä|
+|18.12.|1|docstring, 2 uutta ilmoitusta, koodin hienosäätöä|
 |yht.|40| |
