@@ -26,6 +26,7 @@ class NewEntryView:
         self._emotion = None
         self._message_variable = None
         self._message_label = None
+        self._message_color = None
 
         self._initialize()
 
@@ -76,7 +77,11 @@ class NewEntryView:
 
         if content and emotion:
             diary_service.create_entry(content, emotion)
+            self._message_color = "green"
             self._show_message("Entry saved.")
+        else:
+            self._message_color = "red"
+            self._show_message("Please fill the form.")
 
     def _initialize_footer(self):
         new_label = ttk.Label(
@@ -140,7 +145,7 @@ class NewEntryView:
         self._message_label = ttk.Label(
             master=self._frame,
             textvariable=self._message_variable,
-            foreground="green"
+            foreground=self._message_color,
         )
 
         self._message_label.grid(padx=5, pady=5)
