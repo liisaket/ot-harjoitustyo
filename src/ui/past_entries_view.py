@@ -3,7 +3,16 @@ from services.diary_service import diary_service
 
 
 class PastEntriesList:
+    """Luokka postauksien listaamiseen."""
+    
     def __init__(self, root, entries):
+        """Luokan konstruktori. Luo uuden näkymän.
+        
+        Args:
+            root: TKinter-elementti, jonka sisään näkymä alustetaan.
+            entries: Lista Entry-olioita, jotka näkymässä näytetään.
+        """
+        
         self._root = root
         self._entries = entries
         self._frame = None
@@ -11,9 +20,11 @@ class PastEntriesList:
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _initialize_entry_item(self, entry):
@@ -37,7 +48,19 @@ class PastEntriesList:
 
 
 class PastEntriesView:
+    """Luokka omien postauksien listaamiseen ja näyttämiseen."""
+    
     def __init__(self, root, handle_logout, handle_show_main_page_view):
+        """Luokan konstruktori. Luo uuden näkymän.
+        
+        Args:
+            root: TKinter-elementti, jonka sisään näkymä alustetaan.
+            handle_logout:
+                Kutsuttava arvo, jota kutsutaan, kun käyttäjä kirjautuu ulos.
+            handle_show_main_page_view:
+                Kutsuttava arvo, jota kutsutaan, kun siirrytään etusivulle.
+        """
+        
         self._root = root
         self._handle_show_main_page_view = handle_show_main_page_view
         self._handle_logout = handle_logout
@@ -45,24 +68,50 @@ class PastEntriesView:
         self._entries_frame = None
         self._entries_view = None
         self._frame = None
+        self._message_variable = None
+        self._message_label = None
 
         self._initialize()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
     def _logout_handler(self):
         diary_service.logout()
         self._handle_logout()
+    
+    def _show_message(self, message):
+        self._message_variable.set(message)
+        self._message_label.grid()
+
+    def _hide_message(self):
+        self._message_label.grid_remove()
+        
+    def _initialize_message(self):
+        self._message_variable = StringVar(self._frame)
+
+        self._message_label = ttk.Label(
+            master=self._frame,
+            textvariable=self._message_variable,
+            foreground=None,
+        )
+
+        self._message_label.grid(row=4, padx=5, pady=5, sticky=constants.S)
 
     def _initialize_entries(self):
         if self._entries_view:
             self._entries_view.destroy()
 
         entries = diary_service.get_entries()
+        
+        if len(entries) == 0:
+            self._initialize_message()
+            self._show_message("No entries (yet).")
 
         self._entries_view = PastEntriesList(
             self._entries_frame,
