@@ -17,7 +17,7 @@ class FakeEntryRepository:
     
     def find_by_username(self, username):
         user_entries = filter(
-            lambda: entry: entry.user and entry.user.username == username,
+            lambda entry: entry.user and entry.user.username == username,
             self.entries)
         
         return list(user_entries)
