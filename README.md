@@ -10,7 +10,7 @@ Sovelluksessa käyttäjä voi tehdä postauksen, jossa hän valitsee päivän tu
 - Sovelluksella on etusivu, josta pääsee postauksen luomissivulle ja omien postauksien sivulle
 - Käyttäjä pystyy luomaan uuden postauksen, jossa valitaan päivän tunnetila eri vaihtoehtoista, sekä kirjoitetaan lisätietoja omasta päivästä
 - Käyttäjä pystyy tutkia tekemiään postauksia
-- Käyttäjä pystyy poistamaan oman postauksensa
+- Käyttäjä pystyy poistamaan omia postauksia
 - Ottaa huomioon virhetilanteet
 
 ## Dokumentaatio
