@@ -57,6 +57,21 @@ class EntryRepository:
         self._write(entries)
 
         return entry
+    
+    def delete_entry(self, entry_id):
+        """Poistaa tietyn postauksen.
+        
+        Args:
+            entry_id: Poistettavan postauksen id.
+        """
+        
+        entries = self.find_all()
+        new_entries = filter(lambda entry: entry.id != entry_id, entries)
+        self._write(new_entries)
+        
+    def delete_all(self):
+        """Poistaa kaikki postaukset."""
+        self._write([])
 
     def _read(self):
         entries = []
