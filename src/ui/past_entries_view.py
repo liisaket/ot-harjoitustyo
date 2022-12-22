@@ -136,7 +136,8 @@ class PastEntriesView:
 
         self._entries_view = PastEntriesList(
             self._entries_frame,
-            entries
+            entries,
+            self._handle_delete_entry
         )
 
         self._entries_view.pack()
