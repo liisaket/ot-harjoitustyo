@@ -91,6 +91,8 @@ Postauksen voi poistaa "Delete"-napista.
 
 Jos käyttäjällä ei ole vielä postauksia, sivun otsikon alapuolella lukee "No entries (yet).".
 
+"Go back"-napista pääsee takaisin etusivulle.
+
 ## Komentorivikomennot
 
 ### Testaus
