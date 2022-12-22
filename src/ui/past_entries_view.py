@@ -5,16 +5,19 @@ from services.diary_service import diary_service
 class PastEntriesList:
     """Luokka postauksien listaamiseen."""
     
-    def __init__(self, root, entries):
+    def __init__(self, root, entries, handle_delete_entry):
         """Luokan konstruktori. Luo uuden näkymän.
         
         Args:
             root: TKinter-elementti, jonka sisään näkymä alustetaan.
             entries: Lista Entry-olioita, jotka näkymässä näytetään.
+            handle_delete_entry:
+                Kutsuttava arvo, jota kutsutaan, kun postaus poistetaan.
         """
         
         self._root = root
         self._entries = entries
+        self._handle_delete_entry = handle_delete_entry
         self._frame = None
 
         self._initialize()
@@ -34,8 +37,23 @@ class PastEntriesList:
             master=item_frame,
             text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}"
         )
+        
+        
+        delete_entry_button = ttk.Button(
+            master=item_frame,
+            text="Delete",
+            command=lambda: self._handle_delete_entry(entry.id)
+        )
 
         label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.SW)
+        
+        delete_entry_button.grid(
+            row=4,
+            column=1,
+            padx=5,
+            pady=5,
+            sticky=constants.EW
+        )
 
         item_frame.grid_columnconfigure(0, weight=1)
         item_frame.pack(fill=constants.X)
@@ -84,6 +102,10 @@ class PastEntriesView:
     def _logout_handler(self):
         diary_service.logout()
         self._handle_logout()
+    
+    def _handle_delete_entry(self, entry_id):
+        diary_service.delete_entry(entry_id)
+        self._initialize_entries()
     
     def _show_message(self, message):
         self._message_variable.set(message)
