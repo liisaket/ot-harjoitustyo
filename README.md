@@ -1,23 +1,24 @@
 # Mood-Tracker
 
-Päiväkirjasovellus tunteiden seurantaan.
+Mood-Tracker on päiväkirjasovellus omien tunteiden ja päivien seurantaan.
 
 Sovelluksessa käyttäjä voi tehdä postauksen, jossa hän valitsee päivän tunnetilan ja kirjoittaa lisätietoja päivästään.
 
-### Sovelluksen tämänhetkinen tilanne:
+### Sovelluksen toiminnallisuus:
 
-- Pystyy luomaan uuden käyttäjän ja kirjautua sisään
-- Pystyy kirjautumaan ulos Logout-napista
-- Löytyy etusivu ja napit postauksen luomissivulle ja vanhojen postauksien katsomiseen
-- Pystyy luomaan uuden postauksen (valitaan päivän tunnetila ja voi kirjoittaa lisätietoja päivästään)
-- Past entries-sivulla näkyy omat postaukset
-
+- Perustoiminnallisuudet eli pystyy luomaan uuden käyttäjän, sekä sisään- ja uloskirjautua
+- Sovelluksella on etusivu, josta pääsee postauksen luomissivulle ja omien postauksien sivulle
+- Käyttäjä pystyy luomaan uuden postauksen, jossa valitaan päivän tunnetila eri vaihtoehtoista, sekä kirjoitetaan lisätietoja omasta päivästä
+- Käyttäjä pystyy tutkia tekemiään postauksia
+- Käyttäjä pystyy poistamaan oman postauksensa
+- Ottaa huomioon virhetilanteet
 
 ## Dokumentaatio
 
 - [Käyttöohjeet](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 - [Arkkitehtuurikuvaus](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 - [Vaatimusmäärittely](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+- [Testausdokumentti](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
 - [Changelog](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 - [Työaikakirjanpito](https://github.com/liisaket/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
