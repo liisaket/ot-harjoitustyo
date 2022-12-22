@@ -83,7 +83,7 @@ Syötekenttään kirjoitetaan lisätietoja omasta päivästä.
 
 ## Vanhat postaukset
 
-Kun etusivulla painetaan "Past entries"-nappia, siirrytään sivulle, jossa näkee käyttäjän postaukset.
+Kun etusivulla painetaan "Past entries"-nappia, siirrytään sivulle, jossa näkee käyttäjän omat postaukset.
 
 ![pastentries](./kuvat/pastentries2.png)
 
