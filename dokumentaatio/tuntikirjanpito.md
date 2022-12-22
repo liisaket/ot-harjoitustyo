@@ -19,4 +19,5 @@
 |13.12.|6|past entries-sivu toimimaan, arkkitehtuurikuvaus,
 | | | käyttöohjeet, ilmoitus tallennetusta postauksesta| 
 |18.12.|1|docstring, 2 uutta ilmoitusta, koodin hienosäätöä|
-|yht.|40| |
+|22.12.|3|postauksen poistaminen, lisää testejä, dokumentaatio|
+|yht.|43| |
