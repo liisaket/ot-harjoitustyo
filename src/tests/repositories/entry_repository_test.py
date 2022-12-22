@@ -38,11 +38,11 @@ class TestEntryRepository(unittest.TestCase):
         entry_repository.create(Entry(content="testing b", emotion="sad", user=touko))
 
         testi_entries = entry_repository.find_by_username(self.user_testi.username)
-        self.assertEqual(len(testi_entries), 1))
+        self.assertEqual(len(testi_entries), 1)
         self.assertEqual(testi_entries[0].content, "testing a")
 
         touko_entries = entry_repository.find_by_username(self.user_touko.username)
-        self.assertEqual(len(touko_entries, 1))
+        self.assertEqual(len(touko_entries), 1)
         self.assertEqual(touko_entries[0].content, "testing b")
     
     def test_delete_entry(self):
