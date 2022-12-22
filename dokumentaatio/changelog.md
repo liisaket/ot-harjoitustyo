@@ -31,3 +31,6 @@
 - Virheilmoitus, jos yrittää lisätä tyhjänä uutta postausta.
 - Ilmoitus Past Entries-sivulla, jos käyttäjällä ei ole vielä yhtään postauksia.
 - Docstringiä loppuihin tiedostoihin
+- Uusi toiminnallisuus: käyttäjä pystyy poistamaan omia postauksia "Delete"-napista
+- Lisää testejä
+- Dokumentaation kirjoittamista
