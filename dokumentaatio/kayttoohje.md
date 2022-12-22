@@ -85,7 +85,9 @@ Syötekenttään kirjoitetaan lisätietoja omasta päivästä.
 
 Kun etusivulla painetaan "Past entries"-nappia, siirrytään sivulle, jossa näkee käyttäjän postaukset.
 
-![pastentries](./kuvat/pastentries.png)
+![pastentries](./kuvat/pastentries2.png)
+
+Postauksen voi poistaa "Delete"-napista.
 
 Jos käyttäjällä ei ole vielä postauksia, sivun otsikon alapuolella lukee "No entries (yet).".
 
