@@ -4,7 +4,7 @@ Mood-Tracker on päiväkirjasovellus omien tunteiden ja päivien seurantaan.
 
 Sovelluksessa käyttäjä voi tehdä postauksen, jossa hän valitsee päivän tunnetilan ja kirjoittaa lisätietoja päivästään.
 
-### Sovelluksen toiminnallisuus:
+### Sovelluksen toiminnallisuudet
 
 - Perustoiminnallisuudet eli pystyy luomaan uuden käyttäjän, sekä sisään- ja uloskirjautua
 - Sovelluksella on etusivu, josta pääsee postauksen luomissivulle ja omien postauksien sivulle
