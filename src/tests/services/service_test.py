@@ -124,6 +124,18 @@ class TestDiaryService(unittest.TestCase):
         self.assertEqual(entries[0].emotion, "euphoric")
         self.assertEqual(entries[0].user.username, self.user_testi.username)
     
+    def test_delete_entry(self):
+        self.login_user(self.user_testi)
+        self.diary_service.create_entry("testing", "happy")
+        
+        entries = self.diary_service.get_entries()
+        self.assertEqual(len(entries), 1)
+        
+        self.diary_service.delete_entry(entries[0].id)
+        
+        entries = self.diary_service.get_entries()
+        self.assertEqual(len(entries), 0)
+        
     def test_get_entries(self):
         self.login_user(self.user_testi)
         
