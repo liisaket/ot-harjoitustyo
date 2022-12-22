@@ -1,22 +1,43 @@
 # Vaatimusmäärittely
 
-## Sovellus: Mood-Tracker
+## Sovelluksen tarkoitus
 
-### Sovelluksen tarkoitus
+Mood-Tracker on päiväkirjasovellus omien tunteiden ja päivien seurantaan.
 
-- Sovelluksen avulla voi seurata päivittäistä olotilaa ja kirjoittaa lisätietoja omasta päivästään. Ns. päiväkirjasovellus
+Sovelluksessa käyttäjä voi tehdä postauksen, jossa hän valitsee päivän tunnetilan ja kirjoittaa lisätietoja päivästään.
 
-### Suunnitellut toiminnallisuudet
+## Käyttöliittymäluonnos
 
-- Voi luoda uuden käyttäjätunnuksen -> tehty
-- Voi kirjautua sisään olemassa olevalle käyttäjälle -> tehty
-- Käyttäjä voi valita päivän mielialaansa kuvailevan tunteen eri tunnetilavaihtoehdoista (valikko) -> tehty
-- Käyttäjä voi kirjoittaa lisätietoja olotilastaan ja päivästään siihen tarkoitettuun kenttään -> tehty
-- Käyttäjä voi tutkia aikaisempia merkintöjä -> tehty
+![luonnos](./kuvat/luonnostelu.jpg)
 
-### Jatkokehitysideat
+- Sovellus koostuu viidestä eri näkymästä (kuvassa ei ole rekisteröitymisnäkymää, eikä vastaa siis täysin nykyistä versiota).
+- Sovellus avautuu kirjautumisnäkymään, josta on mahdollista siirtyä rekisteröitymisnäkymään tai jos sisäänkirjautuminen onnistuu, sovelluksen etusivulle.
+
+## Sovelluksen toiminnallisuudet
+
+### Ennen kirjautumista
+
+- Käyttäjä pystyy luomaan uuden käyttäjätunnuksen
+  - Käyttäjätunnuksen tulee olla uniikki
+  - Jos käyttäjän luominen ei onnistu, tulee esiin virheilmoitus
+- Käyttäjä pystyy kirjautumaan sisään sovellukseen
+  - Kirjautuminen onnistuu kirjautumissivulla, kirjoittamalla olemassaoleva käyttäjätunnus ja sen salasana syötekenttiin
+  - Jos kirjautuminen epäonnistuu, tulee esiin virheilmoitus epäpätevästä käyttäjätunnuksesta tai salasanasta
+
+### Kirjautumisen jälkeen
+
+- Sovelluksella etusivulta pääsee uuden postauksen luomissivulle ja omien postauksien sivulle
+- Käyttäjä pystyy luomaan uuden postauksen
+  - Käyttäjä valitsee valikosta päivän tunnetilaa kuvaavan adjektiivin ja kirjoittaa lisätietoja omasta päivästä
+  - Jos käyttäjä yrittää tallentaa postauksen, mutta on unohtanut valita tunnetilan tai kirjoittaa lisätietoja (tai molemmat), tulee esiin virheilmoitus ja postausta ei tallenneta
+  - Onnistuneesta postauksen tallennuksesta tulee myös esiin ilmoitus
+- Käyttäjä pystyy tutkia tekemiään postauksia
+- Käyttäjä pystyy poistamaan omia postauksia
+  - Tämä onnistuu painamalla postauksen vieressä olevaa "Delete"-nappia, jota klikkaamalla postaus poistuu heti ja näkymä päivittyy
+- Käyttäjä pystyy kirjautumaan ulos "Logout"-napista jokaisella näkymällä
+
+## Jatkokehitysideat
 
 - Käyttäjä voi muokata merkintöjä
-- Käyttäjä voi poistaa merkintöjä
-- Käyttäjä voisi nähdä tilastoja olotiloistaan, esim. "viimeksi ollut **erittäin hyvä**-olotila 15.11.2022" ja "viimeksi ollut **erittäin huono**-olotila 14.11.2022"
+- Käyttäjä voisi nähdä tilastoja mielialoistaan
 - Käyttäjätunnuksen ja sen tietojen poistaminen
