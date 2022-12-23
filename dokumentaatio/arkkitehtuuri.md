@@ -90,7 +90,7 @@ Sovellus tallentaa postauksien tiedot CSV-tiedostoon muodossa:
 
 Kun käyttäjä kirjoittaa kirjautumisnäkymässä käyttäjätunnuksensa ja salasanan, ja klikkaa "Login"-nappia, tapahtuu seuraavaa:
 
-![Kaavio1](./kuvat/sekvenssikaavio_ui.png)
+
 
 - Napin painallukseen reagoi [tapahtumankäsittelijä](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/ui/login_view.py#L20), joka kutsuu sovelluslogiikan ```DiaryService``` metodia [login](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/services/diary_service.py#L46), jolle annetaan parametreiksi juuri syötetyt käyttäjätunnus ja salasana. 
 - ```Login```-metodi kutsuu käyttäjistä vastaavan luokan ```UserRepository``` funktiota [find_by_username](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/repositories/user_repository.py#L46), jonka avulla tarkastetaan, onko käyttäjätunnus olemassa.
