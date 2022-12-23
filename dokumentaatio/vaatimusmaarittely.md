@@ -32,8 +32,10 @@ Sovelluksessa käyttäjä voi tehdä postauksen, jossa hän valitsee päivän tu
   - Jos käyttäjä yrittää tallentaa postauksen, mutta on unohtanut valita tunnetilan tai kirjoittaa lisätietoja (tai molemmat), tulee esiin virheilmoitus ja postausta ei tallenneta
   - Onnistuneesta postauksen tallennuksesta tulee myös esiin ilmoitus
 - Käyttäjä pystyy tutkia tekemiään postauksia
+  - Jos käyttäjällä ei ole vielä postauksia, sivulla ilmoitetaan tästä
 - Käyttäjä pystyy poistamaan omia postauksia
   - Tämä onnistuu painamalla postauksen vieressä olevaa "Delete"-nappia, jota klikkaamalla postaus poistuu heti ja näkymä päivittyy
+  - Onnistuneesta postauksen poistamisesta tulee ilmoitus (paitsi jos poistaa ainoaisen postauksensa, jolloin sivulle tulee esille vain ilmoitus, ettei postauksia ole)
 - Käyttäjä pystyy kirjautumaan ulos "Logout"-napista jokaisella näkymällä
 
 ## Jatkokehitysideat
