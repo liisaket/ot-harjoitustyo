@@ -20,4 +20,6 @@
 | | | käyttöohjeet, ilmoitus tallennetusta postauksesta| 
 |18.12.|1|docstring, 2 uutta ilmoitusta, koodin hienosäätöä|
 |22.12.|3|postauksen poistaminen, lisää testejä, dokumentaatio|
-|yht.|43| |
+|23.12.|4|ilmoitus postauksen poistamisesta, 
+| | | dokumentaatio, lint, hienosäätöä|
+|yht.|47| |
