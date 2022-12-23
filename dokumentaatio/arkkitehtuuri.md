@@ -57,6 +57,8 @@ DiaryService on yhteydessä luokkiin:
 - [UserRepository](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/repositories/user_repository.py): vastaa käyttäjiin liittyvistä tietokantaoperaatioista
 - [EntryRepository](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/repositories/entry_repository.py): vastaa postauksiin liittyvistä tietokantaoperaatioista
 
+Pakkauskaavio ohjelmiston rakenteesta:
+
 ![Pakkausrakenne](./kuvat/arkkitehtuuri-rakenne.png)
 
 ## Tietojen pysyväistallennus
@@ -77,13 +79,25 @@ Sovellus tallentaa postauksien tiedot CSV-tiedostoon muodossa:
 ```
 
 1. Postauksen id
-2. Postauksen päivämäärä (pv-kk-vvvv hh:mm)
+2. Postauksen päivämäärä ja kellonaika (pv-kk-vvvv hh:mm)
 3. Päivän lisätiedot/muistiinpanot
 4. Päivän tunnetila
 5. Postauksen omaava käyttäjä
 
-## Päätoiminnallisuudet
+## Päätoiminnallisuudet ja toimintalogiikka
 
-...
+### Sisäänkirjautuminen
+
+Kun käyttäjä kirjoittaa kirjautumisnäkymässä käyttäjätunnuksensa ja salasanan, ja klikkaa "Login"-nappia, tapahtuu seuraavaa:
 
 ![Sekvenssikaavio](./kuvat/sekvenssikaavio_ui.png)
+
+- Napin painallukseen reagoi [tapahtumankäsittelijä](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/ui/login_view.py#L20), joka kutsuu sovelluslogiikan ```DiaryService``` metodia [login](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/services/diary_service.py#L46), jolle annetaan parametreiksi juuri syötetyt käyttäjätunnus ja salasana. 
+- ```Login```-metodi kutsuu käyttäjistä vastaavan luokan ```UserRepository``` funktiota [find_by_username](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/repositories/user_repository.py#L46), jonka avulla tarkastetaan, onko käyttäjätunnus olemassa.
+  - Jos käyttäjätunnus löytyy, funktio palauttaa kyseisen käyttäjän User-oliona.
+  - Muuten funktio palauttaisi None, johon sovelluslogiikan metodi reagoisi nostattamalla ```InvalidCredentialsError```-virhetilanteen.
+- Kun käyttäjätunnus on löytynyt, sovelluslogiikan metodi vertaa syötettyä salasanaa ja käyttäjän tallennettua salasanaa; jos ne täsmäävät, kirjautuminen onnistuu.
+- Sitten käyttöliittymä päivittää näkymäksi sovelluksen etusivun, eli ```Main Page```.
+
+### Uuden postauksen luominen
+
