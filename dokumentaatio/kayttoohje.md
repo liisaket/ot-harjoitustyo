@@ -109,7 +109,7 @@ Testikattavuusraportin voi suorittaa komennolla:
 poetry run invoke coverage-report
 ```
 
-Raportti ilmestyy _htmlcov_-hakemistoon (tiedosto _index.hmtl_).
+Raportti ilmestyy _htmlcov_-hakemistoon (tiedosto _index.html_).
 
 ### Pylint
 
