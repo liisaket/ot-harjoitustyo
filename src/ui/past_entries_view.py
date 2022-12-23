@@ -105,6 +105,8 @@ class PastEntriesView:
     
     def _handle_delete_entry(self, entry_id):
         diary_service.delete_entry(entry_id)
+        self._initialize_message("green")
+        self._show_message("Entry deleted.")
         self._initialize_entries()
     
     def _show_message(self, message):
@@ -114,12 +116,13 @@ class PastEntriesView:
     def _hide_message(self):
         self._message_label.grid_remove()
         
-    def _initialize_message(self):
+    def _initialize_message(self, color):
         self._message_variable = StringVar(self._frame)
 
         self._message_label = ttk.Label(
             master=self._frame,
             textvariable=self._message_variable,
+            foreground=color
         )
 
         self._message_label.grid(row=4, padx=5, pady=5, sticky=constants.S)
@@ -131,7 +134,7 @@ class PastEntriesView:
         entries = diary_service.get_entries()
         
         if len(entries) == 0:
-            self._initialize_message()
+            self._initialize_message(None)
             self._show_message("No entries (yet).")
 
         self._entries_view = PastEntriesList(
