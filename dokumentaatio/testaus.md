@@ -21,7 +21,7 @@ Repositorio-luokat käsittelevät dataa, joten niiden testauksessa käytetään 
 ![report](./kuvat/coveragereport.png)
 
 - Testikattavuus on 95%.
-- Testauksessa ei otettu huomioon käyttöliittymäkerrosta.
+- Testikattavuus ei ota huomioon käyttöliittymäkerrosta.
 - Testaamatta jäi ```DiaryService```-luokan osalta uloskirjautuminen ja kirjautumattoman käyttäjän postauksien hakeminen.
 - *build.py*- ja *initialize_database.py*-tiedostojen osalta testaamatta jäi komentojen suorittaminen komentoriviltä.
 
