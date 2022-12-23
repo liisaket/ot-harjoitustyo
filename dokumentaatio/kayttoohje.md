@@ -87,9 +87,7 @@ Kun etusivulla painetaan "Past entries"-nappia, siirrytään sivulle, jossa näk
 
 ![pastentries](./kuvat/pastentries2.png)
 
-Postauksen voi poistaa "Delete"-napista.
-
-Jos käyttäjällä ei ole vielä postauksia, sivun otsikon alapuolella lukee "No entries (yet).".
+Postauksen voi poistaa "Delete"-napista. Jos postauksia on enemmän kuin yksi, ja postauksen poistaa, tulee ilmoitus "Entry deleted.". Jos käyttäjä poistaa ainoaisen postauksensa, eli jos käyttäjällä ei ole vielä postauksia, tulee esiin/sivulla lukee "No entries (yet).".
 
 "Go back"-napista pääsee takaisin etusivulle.
 
