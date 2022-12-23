@@ -25,7 +25,6 @@ Sovelluksessa käyttäjä voi tehdä postauksen, jossa hän valitsee päivän tu
 ## Releases
 
 - [Releases](https://github.com/liisaket/ot-harjoitustyo/releases)
-- Uusin release on viikolta 6 (13.12.2022)
 
 ## Asennus
 
