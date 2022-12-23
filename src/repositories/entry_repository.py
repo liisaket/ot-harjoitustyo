@@ -8,7 +8,7 @@ class EntryRepository:
     """Luokka, joka vastaa päiväkirjapostauksiin liittyvistä tietokantaoperaatioista."""
 
     def __init__(self, file_path):
-        """Luokan konstuktori.
+        """Luokan konstruktori.
 
         Args:
             file_apth: Polku tiedostoon, johon postaukset tallennetaan.
