@@ -32,5 +32,7 @@
 - Ilmoitus Past Entries-sivulla, jos käyttäjällä ei ole vielä yhtään postauksia.
 - Docstringiä loppuihin tiedostoihin
 - Uusi toiminnallisuus: käyttäjä pystyy poistamaan omia postauksia "Delete"-napista
+- Jos postauksia on enemmän kuin yksi, ja postauksen poistaa, tulee ilmoitus "Entry deleted.". Jos on vain yksi postaus jäljellä, ja sen poistaa, ei tule "Entry deleted."-ilmoitusta, vaan tulee näkyviin "No entries (yet)."-ilmoitus.
 - Lisää testejä
 - Dokumentaation kirjoittamista
+- Lint check (10/10)
