@@ -118,16 +118,15 @@ class PastEntriesView:
         
     def _initialize_message(self, color):
         self._message_variable = StringVar(self._frame)
-
+        
         self._message_label = ttk.Label(
             master=self._frame,
             textvariable=self._message_variable,
             foreground=color
         )
-        if color==None:
-            self._message_label.grid(row=4, padx=5, pady=5, sticky=constants.S)
-        else:
+        if color=="green":
             self._message_label.grid(row=0, padx=5, pady=5, sticky=constants.N)
+        self._message_label.grid(row=4, padx=5, pady=5, sticky=constants.S)
 
     def _initialize_entries(self):
         if self._entries_view:
