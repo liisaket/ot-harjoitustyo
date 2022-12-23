@@ -29,6 +29,7 @@ class Entry:
                 Vapaaehtoinen, oletusarvoltaan generoitu datetime-olio.
                 Merkkijonoarvo, joka kuvaa postauksen luomispäivämäärää.
         """
+
         self.content = content
         self.emotion = emotion
         self.user = user
