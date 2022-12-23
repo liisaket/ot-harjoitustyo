@@ -27,8 +27,9 @@ class Entry:
                 Merkkijonoarvo, joka kuvaa postauksen id:tä.
             date:
                 Vapaaehtoinen, oletusarvoltaan generoitu datetime-olio.
-                Merkkijonoarvo, joka kuvaa postauksen luomispäivämäärää. 
+                Merkkijonoarvo, joka kuvaa postauksen luomispäivämäärää.
         """
+        
         self.content = content
         self.emotion = emotion
         self.user = user
