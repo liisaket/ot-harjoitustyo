@@ -124,8 +124,10 @@ class PastEntriesView:
             textvariable=self._message_variable,
             foreground=color
         )
-
-        self._message_label.grid(row=4, padx=5, pady=5, sticky=constants.S)
+        if color==None:
+            self._message_label.grid(row=4, padx=5, pady=5, sticky=constants.S)
+        else:
+            self._message_label.grid(row=0, padx=5, pady=5, sticky=constants.N)
 
     def _initialize_entries(self):
         if self._entries_view:
