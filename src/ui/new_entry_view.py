@@ -5,10 +5,10 @@ from services.diary_service import diary_service
 
 class NewEntryView:
     """Luokka uuden postauksen luomista varten."""
-    
+
     def __init__(self, root, handle_logout, handle_show_main_page_view):
         """Luokan konstruktori. Luo uuden näkymän.
-        
+
         Args:
             root: TKinter-elementti, jonka sisään näkymä alustetaan.
             handle_logout:
@@ -16,7 +16,7 @@ class NewEntryView:
             handle_show_main_page_view:
                 Kutsuttava arvo, jota kutsutaan, kun siirrytään etusivulle.
         """
-        
+
         self._root = root
         self._handle_show_main_page_view = handle_show_main_page_view
         self._handle_logout = handle_logout
@@ -36,7 +36,7 @@ class NewEntryView:
     def destroy(self):
         """Tuhoaa näkymän."""
         self._frame.destroy()
-    
+
     def _show_message(self, message):
         self._message_variable.set(message)
         self._message_label.grid()
@@ -135,7 +135,7 @@ class NewEntryView:
                                pady=5, sticky=constants.EW)
         go_back_button.grid(row=7, column=0, padx=5,
                             pady=5, sticky=constants.EW)
-    
+
     def _initialize_message(self, color):
         self._message_variable = StringVar(self._frame)
 

@@ -11,25 +11,25 @@ from services.diary_service import (
 class FakeEntryRepository:
     def __init__(self, entries=None):
         self.entries = entries or []
-    
+
     def find_all(self):
         return self.entries
-    
+
     def find_by_username(self, username):
         user_entries = filter(
             lambda entry: entry.user and entry.user.username == username,
             self.entries)
-        
+
         return list(user_entries)
-    
+
     def create(self, entry):
         self.entries.append(entry)
         return entry
-    
+
     def delete_entry(self, entry_id):
         new_entries = filter(lambda entry: entry.id != entry_id, self.entries)
         self.entries = list(new_entries)
-        
+
     def delete_all(self):
         self.entries = []
 
@@ -112,33 +112,33 @@ class TestDiaryService(unittest.TestCase):
             UsernameExistsError,
             lambda: self.diary_service.register(username, "random")
         )
-    
+
     def test_create_entry(self):
         self.login_user(self.user_testi)
         self.diary_service.create_entry("testing", "euphoric")
-        
+
         entries = self.diary_service.get_entries()
-        
+
         self.assertEqual(len(entries), 1)
         self.assertEqual(entries[0].content, "testing")
         self.assertEqual(entries[0].emotion, "euphoric")
         self.assertEqual(entries[0].user.username, self.user_testi.username)
-    
+
     def test_delete_entry(self):
         self.login_user(self.user_testi)
         self.diary_service.create_entry("testing", "happy")
-        
+
         entries = self.diary_service.get_entries()
         self.assertEqual(len(entries), 1)
-        
+
         self.diary_service.delete_entry(entries[0].id)
-        
+
         entries = self.diary_service.get_entries()
         self.assertEqual(len(entries), 0)
-        
+
     def test_get_entries(self):
         self.login_user(self.user_testi)
-        
+
         self.diary_service.create_entry(
             self.entry_a.content, self.entry_a.emotion)
 

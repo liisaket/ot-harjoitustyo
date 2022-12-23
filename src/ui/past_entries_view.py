@@ -4,17 +4,17 @@ from services.diary_service import diary_service
 
 class PastEntriesList:
     """Luokka postauksien listaamiseen."""
-    
+
     def __init__(self, root, entries, handle_delete_entry):
         """Luokan konstruktori. Luo uuden näkymän.
-        
+
         Args:
             root: TKinter-elementti, jonka sisään näkymä alustetaan.
             entries: Lista Entry-olioita, jotka näkymässä näytetään.
             handle_delete_entry:
                 Kutsuttava arvo, jota kutsutaan, kun postaus poistetaan.
         """
-        
+
         self._root = root
         self._entries = entries
         self._handle_delete_entry = handle_delete_entry
@@ -37,8 +37,7 @@ class PastEntriesList:
             master=item_frame,
             text=f"Date: {entry.date}{new_line}Emotion: {entry.emotion}{new_line}Notes: {entry.content}"
         )
-        
-        
+
         delete_entry_button = ttk.Button(
             master=item_frame,
             text="Delete",
@@ -46,7 +45,7 @@ class PastEntriesList:
         )
 
         label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.SW)
-        
+
         delete_entry_button.grid(
             row=4,
             column=1,
@@ -67,10 +66,10 @@ class PastEntriesList:
 
 class PastEntriesView:
     """Luokka omien postauksien listaamiseen ja näyttämiseen."""
-    
+
     def __init__(self, root, handle_logout, handle_show_main_page_view):
         """Luokan konstruktori. Luo uuden näkymän.
-        
+
         Args:
             root: TKinter-elementti, jonka sisään näkymä alustetaan.
             handle_logout:
@@ -78,7 +77,7 @@ class PastEntriesView:
             handle_show_main_page_view:
                 Kutsuttava arvo, jota kutsutaan, kun siirrytään etusivulle.
         """
-        
+
         self._root = root
         self._handle_show_main_page_view = handle_show_main_page_view
         self._handle_logout = handle_logout
@@ -102,23 +101,23 @@ class PastEntriesView:
     def _logout_handler(self):
         diary_service.logout()
         self._handle_logout()
-    
+
     def _handle_delete_entry(self, entry_id):
         diary_service.delete_entry(entry_id)
         self._initialize_message("green")
         self._show_message("Entry deleted.")
         self._initialize_entries()
-    
+
     def _show_message(self, message):
         self._message_variable.set(message)
         self._message_label.grid()
 
     def _hide_message(self):
         self._message_label.grid_remove()
-        
+
     def _initialize_message(self, color=None):
         self._message_variable = StringVar(self._frame)
-        
+
         self._message_label = ttk.Label(
             master=self._frame,
             textvariable=self._message_variable,
@@ -134,7 +133,7 @@ class PastEntriesView:
             self._entries_view.destroy()
 
         entries = diary_service.get_entries()
-        
+
         if len(entries) == 0:
             self._initialize_message()
             self._show_message("No entries (yet).")

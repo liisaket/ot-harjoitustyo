@@ -4,10 +4,10 @@ from services.diary_service import diary_service
 
 class MainPageView:
     """Luokka sovelluksen etusivua varten."""
-    
+
     def __init__(self, root, handle_logout, handle_show_new_entry_view, handle_show_past_entries_view):
         """Luokan konstruktori. Luo uuden näkymän.
-        
+
         Args:
             root: TKinter-elementti, jonka sisään näkymä alustetaan.
             handle_logout:
@@ -17,7 +17,7 @@ class MainPageView:
             handle_show_past_entries_view:
                 Kutsuttava arvo, jota kutsutaan, kun siirrytään omien postauksien sivulle.
         """
-        
+
         self._root = root
         self._handle_show_new_entry_view = handle_show_new_entry_view
         self._handle_show_past_entries_view = handle_show_past_entries_view

@@ -116,10 +116,10 @@ class DiaryService:
 
         entry = Entry(content=content, emotion=emotion, user=self._user)
         return self._entry_repository.create(entry)
-    
+
     def delete_entry(self, entry_id):
         """Poistaa tietyn postauksen.
-        
+
         Args:
             entry_id: Merkkijonoarvo, joka kuvaa postauksen id:tä.
         """
