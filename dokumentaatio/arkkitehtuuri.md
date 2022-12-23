@@ -90,7 +90,7 @@ Sovellus tallentaa postauksien tiedot CSV-tiedostoon muodossa:
 
 Kun käyttäjä kirjoittaa kirjautumisnäkymässä käyttäjätunnuksensa ja salasanan, ja klikkaa "Login"-nappia, tapahtuu seuraavaa:
 
-![Sekvenssikaavio](./kuvat/sekvenssikaavio_ui.png)
+
 
 - Napin painallukseen reagoi [tapahtumankäsittelijä](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/ui/login_view.py#L20), joka kutsuu sovelluslogiikan ```DiaryService``` metodia [login](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/services/diary_service.py#L46), jolle annetaan parametreiksi juuri syötetyt käyttäjätunnus ja salasana. 
 - ```Login```-metodi kutsuu käyttäjistä vastaavan luokan ```UserRepository``` funktiota [find_by_username](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/repositories/user_repository.py#L46), jonka avulla tarkastetaan, onko käyttäjätunnus olemassa.
@@ -108,4 +108,4 @@ Kun käyttäjä on siirtynyt uuden postauksen luomissivulle, valinnut päivän t
 - [Tapahtumankäsittelijä](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/ui/new_entry_view.py#L73) reagoi napin painallukseen kutsumalla sovelluslogiikan ```DiaryService``` metodia [create_entry](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/services/diary_service.py#L107), jolle annetaan parametreiksi käyttäjän valitsema tunnetila (emotion), sekä hänen kirjoittamat lisätiedot päivästään (content).
 - Metodi luo uuden [Entry](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/services/diary_service.py#L117)-olion postauksesta, jolle annetaan parametreiksi tunnetila, lisätiedot, sekä postauksen tehnyt käyttäjä.
 - Tuo Entry-olio annetaan postauksista vastaavan luokan ```EntryRepository``` funktiolle [create](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/repositories/entry_repository.py#L46), joka tallentaa postauksen CSV-tiedostoon. Funktio palauttaa tallennetun Entry-olion.
-- Kun postaus on tallennettu, käyttöliittymä kutsuu omia metodeitaan ```_initialize_message("green")``` ja ```_show_message("Entry saved.")```. Näkymä päivittyy ja käyttäjä näkee vihreällä kirjoitetun ilmoituksen postauksen tallentumisesta.
+- Kun postaus on tallennettu, käyttöliittymä kutsuu omia metodeitaan ```_initialize_message("green")``` ja ```_show_message("Entry saved.")```. Näkymä päivittyy ja käyttäjä näkee vihreällä kirjoitetun ilmoituksen postauksen onnistuneesta tallentumisesta.
