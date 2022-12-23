@@ -88,8 +88,6 @@ class PastEntriesView:
         self._frame = None
         self._message_variable = None
         self._message_label = None
-        self._no_entries_variable = None
-        self._no_entries_label = None
 
         self._initialize()
 
@@ -107,39 +105,29 @@ class PastEntriesView:
     
     def _handle_delete_entry(self, entry_id):
         diary_service.delete_entry(entry_id)
-        self._initialize_message(
-            self._no_entries_variable,
-            self._no_entries_label,
-            "green"
-        )
-        self._show_message(
-                "Entry deleted.",
-                self._no_entries_variable,
-                self._no_entries_label
-            )
+        self._initialize_message("green")
+        self._show_message("Entry deleted.")
         self._initialize_entries()
     
-    def _show_message(self, message, variable, label):
-        variable.set(message)
-        label.grid()
+    def _show_message(self, message):
+        self._message_variable.set(message)
+        self._message_label.grid()
 
     def _hide_message(self):
         self._message_label.grid_remove()
-        self._no_entries_label.grid_remove()
         
-    def _initialize_message(self, variable, label, color=None):
-        variable = StringVar(self._frame)
+    def _initialize_message(self, color=None):
+        self._message_variable = StringVar(self._frame)
         
-        label = ttk.Label(
+        self._message_label = ttk.Label(
             master=self._frame,
-            textvariable=variable,
-            color=color
+            textvariable=self._message_variable,
+            foreground=color
         )
-        
         if color != None:
-            label.grid(row=0, padx=5, pady=5, sticky=constants.N)
+            self._message_label.grid(row=0, padx=5, pady=5, sticky=constants.N)
         else:
-            label.grid(row=4, padx=5, pady=5, sticky=constants.S)
+            self._message_label.grid(row=4, padx=5, pady=5, sticky=constants.S)
 
     def _initialize_entries(self):
         if self._entries_view:
@@ -148,13 +136,8 @@ class PastEntriesView:
         entries = diary_service.get_entries()
         
         if len(entries) == 0:
-            self._initialize_message(
-                self._no_entries_variable, self._no_entries_label)
-            self._show_message(
-                "No entries (yet).",
-                self._no_entries_variable,
-                self._no_entries_label
-            )
+            self._initialize_message()
+            self._show_message("No entries (yet).")
 
         self._entries_view = PastEntriesList(
             self._entries_frame,
