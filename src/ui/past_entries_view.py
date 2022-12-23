@@ -116,7 +116,7 @@ class PastEntriesView:
     def _hide_message(self):
         self._message_label.grid_remove()
         
-    def _initialize_message(self, color):
+    def _initialize_message(self, color=None):
         self._message_variable = StringVar(self._frame)
         
         self._message_label = ttk.Label(
@@ -124,8 +124,9 @@ class PastEntriesView:
             textvariable=self._message_variable,
             foreground=color
         )
-        self._message_label.grid(row=0, padx=5, pady=5, sticky=constants.N)
-        #self._message_label.grid(row=4, padx=5, pady=5, sticky=constants.S)
+        if color != None:
+            self._message_label.grid(row=0, padx=5, pady=5, sticky=constants.N)
+        self._message_label.grid(row=4, padx=5, pady=5, sticky=constants.S)
 
     def _initialize_entries(self):
         if self._entries_view:
@@ -134,7 +135,7 @@ class PastEntriesView:
         entries = diary_service.get_entries()
         
         if len(entries) == 0:
-            self._initialize_message(None)
+            self._initialize_message()
             self._show_message("No entries (yet).")
 
         self._entries_view = PastEntriesList(
