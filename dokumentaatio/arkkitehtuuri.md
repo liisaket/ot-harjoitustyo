@@ -103,7 +103,7 @@ Kun käyttäjä kirjoittaa kirjautumisnäkymässä käyttäjätunnuksensa ja sal
 
 Kun käyttäjä on siirtynyt uuden postauksen luomissivulle, valinnut päivän tunnetilan ja kirjoittanut lisätietoja päivästään, sekä klikannut "Save entry"-nappia tallentaakseen postauksen, tapahtuu seuraavaa:
 
-![Kaavio2](./kuvat/save_entry.png)
+
 
 - [Tapahtumankäsittelijä](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/ui/new_entry_view.py#L73) reagoi napin painallukseen kutsumalla sovelluslogiikan ```DiaryService``` metodia [create_entry](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/services/diary_service.py#L107), jolle annetaan parametreiksi käyttäjän valitsema tunnetila (emotion), sekä hänen kirjoittamat lisätiedot päivästään (content).
 - Metodi luo uuden [Entry](https://github.com/liisaket/ot-harjoitustyo/blob/master/src/services/diary_service.py#L117)-olion postauksesta, jolle annetaan parametreiksi tunnetila, lisätiedot, sekä postauksen tehnyt käyttäjä.
